@@ -1,0 +1,105 @@
+{
+  "time": "2017-01-13T00:43:27.929Z",
+  "servers": {
+    "logon": {
+      "status": true,
+      "last_updated": "2017-01-13T00:42:36.901Z",
+      "memory": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "website": {
+      "status": true,
+      "last_updated": "2017-01-13T00:42:36.205Z",
+      "memory": []
+    },
+    "elysium_pvp": {
+      "status": true,
+      "last_updated": "2017-01-13T00:42:36.903Z",
+      "memory": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "zethkur_pvp": {
+      "status": false,
+      "last_updated": null,
+      "memory": []
+    },
+    "nostalrius_pvp": {
+      "status": true,
+      "last_updated": "2017-01-13T00:42:36.898Z",
+      "memory": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "nostalrius_pve": {
+      "status": false,
+      "last_updated": "2017-01-13T00:42:36.902Z",
+      "memory": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "autoqueue": {
+    "export_time": "2017-01-13T01:44:36.4173559+01:00",
+    "loginServerUnreliable": false,
+    "waiting_incidents": [],
+    "servers": [
+      {
+        "name": "Elysium PVP",
+        "queueAvailable": true,
+        "queue": 3507,
+        "last_updated": "2017-01-13T01:39:48.0415184+01:00"
+      },
+      {
+        "name": "Nostalrius PVP",
+        "queueAvailable": true,
+        "queue": 0,
+        "last_updated": "2017-01-13T01:40:30.6181644+01:00"
+      },
+      {
+        "name": "Nostalrius PVE",
+        "queueAvailable": true,
+        "queue": 0,
+        "last_updated": "2017-01-13T01:41:05.2928053+01:00"
+      }
+    ],
+    "recieved_at": "2017-01-13T00:43:16.353Z"
+  }
+}
