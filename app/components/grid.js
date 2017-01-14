@@ -21,12 +21,17 @@ import Box from './material/box'
 class Grid extends Component {
 
   groupItems(items, itemsPerRow) {
-    const allGroups = []
+    const groups = []
     let group = { items: [] }
-    items.forEach(function(item) {
+    items.forEach(function(item, index) {
       if (group.items.length === itemsPerRow) {
-        allGroups.push(group)
-        group = { items: [ item ] }
+        groups.push(group)
+        if (item.dontGroup) {
+          groups.push({ items: [ item ] })
+          group = { items: [] }
+        } else {
+          group = { items: [ item ] }
+        }
       } else {
         group.items.push(item)
       }
@@ -34,10 +39,10 @@ class Grid extends Component {
 
     if (group.items.length > 0) {
       group.isLast = true
-      allGroups.push(group)
+      groups.push(group)
     }
 
-    return allGroups
+    return groups
   }
 
   getItemSize(group) {
@@ -46,8 +51,9 @@ class Grid extends Component {
     // Account for margins
     width -= (group.items.length * MARGIN_SIZE)
 
-    const currentHeight = width/group.items.length
-    const currentWidth = currentHeight
+    const currentWidth =  width/group.items.length
+    const currentHeight = width/this.props.itemsPerRow
+
 
     return {
       height: currentHeight,
@@ -61,7 +67,7 @@ class Grid extends Component {
     const items = group.items.map((item, index) => {
       // Avoid double margins between list and boxes
       const marginLeft = index > 0 ? MARGIN_SIZE : 0
-      
+
       const marginBottom = MARGIN_SIZE
 
       let icon = <Icon name='close' size={44} color='hsla(0, 100%, 41%, 0.85)' />
@@ -71,11 +77,11 @@ class Grid extends Component {
 
       return (
         <Box
-          key={item.url}
+          key={item.id}
           style={{ marginLeft, marginBottom, width, height }}
           title={item.title}
           subtitle={item.subtitle}
-          imageURL={item.url}
+          imageURL={item.image}
           icon={icon}
         />
       )
@@ -121,32 +127,7 @@ const styles = StyleSheet.create({
 })
 
 Grid.defaultProps = {
-  items: [
-    {
-      title: 'Nostalrius PVP',
-      status: true,
-      url: 'https://elysium-project.org/assets/realms/1.jpg'
-    },
-    {
-      title: 'Nostalrius PVE',
-      status: true,
-      url: 'https://elysium-project.org/assets/realms/2.jpg'
-    },
-    {
-      title: 'Elysium PVP',
-      status: true,
-      url: 'https://elysium-project.org/assets/realms/3.jpg'
-    },
-    {
-      title: 'Zethkur PVP',
-      status: false,
-      url: 'https://elysium-project.org/assets/realms/4.jpg'
-    },
-    {
-      title: 'Elysium Login Server',
-      url: 'https://elysium-project.org/assets/img/slide1.jpg'
-    }
-  ],
+  items: [],
   itemsPerRow: 2
 }
 
