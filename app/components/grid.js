@@ -9,13 +9,12 @@ import {
   Image
 } from 'react-native';
 
-import RealmCards from './realm_cards'
+import Dimensions from 'Dimensions'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { THEME } from '../config'
-
-import Dimensions from 'Dimensions'
-
 const { PRIMARY_COLOR, ACCENT_COLOR } = THEME
+const MARGIN_SIZE = 4
 
 import Box from './material/box'
 
@@ -41,13 +40,46 @@ class Grid extends Component {
     return allGroups
   }
 
-  renderGroup(group) {
-    const { height, width } = Dimensions.get('window')
+  getItemSize(group) {
+    let { height, width } = Dimensions.get('window')
+
+    // Account for margins
+    width -= (group.items.length * MARGIN_SIZE)
+
     const currentHeight = width/group.items.length
     const currentWidth = currentHeight
 
+    return {
+      height: currentHeight,
+      width: currentWidth
+    }
+  }
+
+  renderGroup(group) {
+    const { height, width } = this.getItemSize(group)
+
     const items = group.items.map((item, index) => {
-      return <Box key={item.url} style={{  marginLeft: 4, marginBottom: group.isLast ? 2 : 4, width: currentWidth, height: currentHeight }} imageURL={item.url}  />
+      // Avoid double margins between list and boxes
+      const marginLeft = index > 0 ? MARGIN_SIZE : 0
+      
+      const marginBottom = MARGIN_SIZE
+
+      let icon = <Icon name='close' size={44} color='hsla(0, 100%, 41%, 0.85)' />
+      if (item.status) {
+        icon = <Icon name='check' size={44} color='hsla(144, 100%, 39%, 0.85)'/>
+      }
+
+      return (
+        <Box
+          key={item.url}
+          style={{ marginLeft, marginBottom, width, height }}
+          title={item.title}
+          subtitle={item.subtitle}
+          imageURL={item.url}
+          icon={icon}
+        />
+      )
+
     })
 
     return (
@@ -65,8 +97,8 @@ class Grid extends Component {
       <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
         <ListView
           {...this.props}
-          style={{ margin: 4 }}
-          renderRow={this.renderGroup}
+          style={{ marginLeft: MARGIN_SIZE, marginRight: MARGIN_SIZE }}
+          renderRow={this.renderGroup.bind(this)}
           dataSource={ds.cloneWithRows(groups)}
         />
       </View>
@@ -81,16 +113,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden'
+  },
+  icon: {
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
 
 Grid.defaultProps = {
   items: [
-    { url: 'https://elysium-project.org/assets/realms/1.jpg' },
-    { url: 'https://elysium-project.org/assets/realms/2.jpg' },
-    { url: 'https://elysium-project.org/assets/realms/3.jpg' },
-    { url: 'https://elysium-project.org/assets/realms/4.jpg' },
-    { url: 'https://elysium-project.org/assets/img/slide1.jpg' }
+    {
+      title: 'Nostalrius PVP',
+      status: true,
+      url: 'https://elysium-project.org/assets/realms/1.jpg'
+    },
+    {
+      title: 'Nostalrius PVE',
+      status: true,
+      url: 'https://elysium-project.org/assets/realms/2.jpg'
+    },
+    {
+      title: 'Elysium PVP',
+      status: true,
+      url: 'https://elysium-project.org/assets/realms/3.jpg'
+    },
+    {
+      title: 'Zethkur PVP',
+      status: false,
+      url: 'https://elysium-project.org/assets/realms/4.jpg'
+    },
+    {
+      title: 'Elysium Login Server',
+      url: 'https://elysium-project.org/assets/img/slide1.jpg'
+    }
   ],
   itemsPerRow: 2
 }

@@ -7,21 +7,76 @@ import {
 } from 'react-native';
 
 class Box extends Component {
+
+  displayIcon() {
+    if (this.props.icon) {
+      return (
+        <View style={{ justifyContent: 'center', alignItems: 'center'}}>
+          {this.props.icon}
+        </View>
+      )
+    }
+  }
+
+  renderSubtitle() {
+    if (!this.props.subtitle) {
+      return null
+    }
+
+    return (
+      <Text style={styles.subtitle}>{this.props.subtitle}</Text>
+    )
+  }
+
   render() {
+    const { width, height } = this.props.style
+    let footerHeight = 68
+    if (!this.props.subtitle) {
+      footerHeight = 48
+    }
+
     return (
       <View style={this.props.style}>
         <Image
           resizeMode='cover'
-          style={{ height: this.props.style.height, width: this.props.style.height }}
+          style={{ position: 'absolute', height, width }}
           source={{ uri: this.props.imageURL }}
         />
+      <View style={[ styles.boxFooter, { width, height: footerHeight }]}>
+          <View style={styles.textWrapper}>
+            <Text style={styles.title}>{this.props.title}</Text>
+            { this.renderSubtitle() }
+          </View>
+          { this.displayIcon() }
+        </View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-
+  boxFooter: {
+    position: 'absolute',
+    bottom: 0,
+    height: 68,
+    backgroundColor: 'hsla(0, 0%, 0%, 0.4)',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  textWrapper: {
+    marginLeft: 16,
+    flex: 1,
+    justifyContent: 'center'
+  },
+  title: {
+    color: '#ffffff',
+    fontSize: 18
+  },
+  subtitle: {
+    color: 'hsla(0, 0%, 100%, 0.8)',
+    fontSize: 14
+  }
 })
 
 Box.defaultProps = {
