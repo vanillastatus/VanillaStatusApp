@@ -17,7 +17,7 @@ const { PRIMARY_COLOR, ACCENT_COLOR } = THEME
 class Stats extends Component {
   render() {
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: '#fafafa' }}>
+      <ScrollView style={{ flex: 1, backgroundColor: '#fafafa', zIndex: 1 }}>
         <RealmCards realms={this.props.servers} autoqueue={this.props.autoqueue} />
         <View style={styles.donateContainer}>
           <View style={{ marginTop: 25 }}>

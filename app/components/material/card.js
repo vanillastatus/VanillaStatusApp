@@ -62,7 +62,12 @@ const styles = StyleSheet.create({
     elevation: 2,
     borderRadius: 2,
     alignSelf: 'stretch',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    shadowOpacity: 0.18,
+    shadowRadius: 0.9,
+    shadowOffset: {
+      height: 1,
+    },
   },
   textWrapper: {
     marginTop: 16,
