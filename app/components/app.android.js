@@ -17,6 +17,7 @@ import moment from 'moment'
 import { connect } from 'react-redux'
 
 import Stats from './stats'
+import Grid from './grid'
 import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
@@ -42,7 +43,7 @@ class App extends Component {
   }
 
   renderStats(servers, autoqueue) {
-    return <Stats servers={servers} autoqueue={autoqueue} />
+    return <Grid servers={servers} autoqueue={autoqueue} />
   }
 
   render() {
