@@ -33,7 +33,7 @@ export const REALMS = {
 }
 
 export const SOON = {
-  zethkur_pvp: true
+  // New servers
 }
 
 export const HOST = 'https://elysiumstatus.com'
