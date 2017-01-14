@@ -13,55 +13,49 @@ import RealmCards from './realm_cards'
 
 import { THEME } from '../config'
 
-import Dimensions from 'Dimensions';
+import Dimensions from 'Dimensions'
 
 const { PRIMARY_COLOR, ACCENT_COLOR } = THEME
+
+import Box from './material/box'
 
 class Grid extends Component {
 
   groupItems(items, itemsPerRow) {
-     const allGroups = []
-     let group = { items: [] }
-     items.forEach(function(item) {
-       if (group.items.length === itemsPerRow) {
-         allGroups.push(group)
-         group = { items: [ item ] }
-       } else {
-         group.items.push(item)
-       }
-     })
+    const allGroups = []
+    let group = { items: [] }
+    items.forEach(function(item) {
+      if (group.items.length === itemsPerRow) {
+        allGroups.push(group)
+        group = { items: [ item ] }
+      } else {
+        group.items.push(item)
+      }
+    })
 
-     if (group.items.length > 0) {
-       group.isLast = true
-       allGroups.push(group)
-     }
+    if (group.items.length > 0) {
+      group.isLast = true
+      allGroups.push(group)
+    }
 
-     return allGroups
- }
+    return allGroups
+  }
 
- renderGroup(group) {
-   const { height, width } = Dimensions.get('window')
-   const currentHeight = width/group.items.length
-   const currentWidth = currentHeight
+  renderGroup(group) {
+    const { height, width } = Dimensions.get('window')
+    const currentHeight = width/group.items.length
+    const currentWidth = currentHeight
 
-   const items = group.items.map((item, index) => {
-     return (
-       <View key={item.url} style={{ marginLeft: 4, marginBottom: group.isLast ? 2 : 4, width: currentWidth, height: currentHeight }}>
-         <Image
-           resizeMode='cover'
-           style={{ height: currentHeight, width: currentWidth }}
-           source={{uri: item.url}}
-         />
-       </View>
-     )
-   })
+    const items = group.items.map((item, index) => {
+      return <Box key={item.url} style={{  marginLeft: 4, marginBottom: group.isLast ? 2 : 4, width: currentWidth, height: currentHeight }} imageURL={item.url}  />
+    })
 
-   return (
-     <View style={styles.group}>
-       {items}
-     </View>
-   );
- }
+    return (
+      <View style={styles.group}>
+        {items}
+      </View>
+    )
+  }
 
   render() {
     var groups = this.groupItems(this.props.items, this.props.itemsPerRow);
@@ -96,8 +90,7 @@ Grid.defaultProps = {
     { url: 'https://elysium-project.org/assets/realms/2.jpg' },
     { url: 'https://elysium-project.org/assets/realms/3.jpg' },
     { url: 'https://elysium-project.org/assets/realms/4.jpg' },
-    { url: 'https://elysium-project.org/assets/img/slide1.jpg' },
-
+    { url: 'https://elysium-project.org/assets/img/slide1.jpg' }
   ],
   itemsPerRow: 2
 }
