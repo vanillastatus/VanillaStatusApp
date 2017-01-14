@@ -17,19 +17,41 @@ export const THEME = {
 }
 
 export const SERVERS = {
-  logon: 'Elysium Login Server',
-  website: 'Elysium Website',
-  elysium_pvp: 'Elysium PVP',
-  zethkur_pvp: 'Zethkur PVP',
-  nostalrius_pvp: 'Nostalrius PVP',
-  nostalrius_pve: 'Nostalrius PVE'
+  elysium_pvp: {
+    name: 'Elysium',
+    image: 'http://i.imgur.com/7Gisr3n.jpg',
+    order: 3
+  },
+  zethkur_pvp: {
+    name: 'Zethkur',
+    image: 'http://i.imgur.com/ICElhLj.jpg',
+    order: 4
+  },
+  nostalrius_pvp: {
+    name: 'Anathema',
+    image: 'http://i.imgur.com/B9QGZu3.jpg',
+    order: 1
+  },
+  nostalrius_pve: {
+    name: 'Darrowshire',
+    image: 'http://i.imgur.com/KcWcbPo.jpg',
+    order: 2
+  },
+  logon: {
+    name: 'Elysium Login Server',
+    image: 'http://i.imgur.com/9ywu91U.jpg',
+    order: 5
+  },
+  website: {
+    name: 'Elysium Website',
+    image: 'http://i.imgur.com/n1w5Sbn.jpg',
+    order: 6
+  }
 }
 
-export const REALMS = {
-  elysium_pvp: true,
-  zethkur_pvp: true,
-  nostalrius_pvp: true,
-  nostalrius_pve: true
+export const SERVICES = {
+  logon: true,
+  website: true
 }
 
 export const SOON = {

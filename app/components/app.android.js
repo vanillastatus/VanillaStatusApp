@@ -15,6 +15,7 @@ import {
 import _ from 'lodash'
 import moment from 'moment'
 import { connect } from 'react-redux'
+import { parseStatus } from '../util/parser'
 
 import Stats from './stats'
 import Grid from './grid'
@@ -43,7 +44,13 @@ class App extends Component {
   }
 
   renderStats(servers, autoqueue) {
-    return <Grid servers={servers} autoqueue={autoqueue} />
+    const items = Object.keys(servers).map((server) => {
+      const serverWithId = { ...servers[server], id: server }
+      return parseStatus(serverWithId, autoqueue)
+    })
+
+    console.log(_.sortBy(items, 'order'))
+    return <Grid items={_.sortBy(items, 'order' )} />
   }
 
   render() {
