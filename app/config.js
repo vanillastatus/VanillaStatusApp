@@ -12,7 +12,7 @@ export const CLASS_COLORS = {
 }
 
 export const THEME = {
-  PRIMARY_COLOR: '#525252',
+  PRIMARY_COLOR: '#121212',
   ACCENT_COLOR: CLASS_COLORS.SHAMAN
 }
 
