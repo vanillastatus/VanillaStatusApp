@@ -38,7 +38,7 @@ class RealmCards extends Component {
     }
 
     if (!queueAvailable) {
-      return 'Queues Unavailable'
+      return 'Queue Unavailable'
     }
   }
 
