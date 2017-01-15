@@ -13,7 +13,7 @@ import Dimensions from 'Dimensions'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { THEME } from '../config'
-const { PRIMARY_COLOR, ACCENT_COLOR } = THEME
+const { PRIMARY_COLOR, ACCENT_COLOR, SUCCESS_COLOR, ERROR_COLOR } = THEME
 const MARGIN_SIZE = 4
 
 import Box from './material/box'
@@ -70,9 +70,9 @@ class Grid extends Component {
 
       const marginBottom = MARGIN_SIZE
 
-      let icon = <Icon name='close' size={44} color='hsla(0, 100%, 41%, 0.85)' />
+      let icon = <Icon name='close' size={44} color={ERROR_COLOR} />
       if (item.status) {
-        icon = <Icon name='check' size={44} color='hsla(144, 100%, 39%, 0.85)'/>
+        icon = <Icon name='check' size={44} color={SUCCESS_COLOR} />
       }
 
       return (

@@ -9,8 +9,6 @@ import App from './app'
 
 const middleware = [ thunk ]
 
-console.log('DEV', __DEV__)
-
 if (__DEV__) {
   const createLogger = require('redux-logger')
   const logger = createLogger()

@@ -13,7 +13,9 @@ export const CLASS_COLORS = {
 
 export const THEME = {
   PRIMARY_COLOR: '#121212',
-  ACCENT_COLOR: CLASS_COLORS.SHAMAN
+  ACCENT_COLOR: CLASS_COLORS.SHAMAN,
+  SUCCESS_COLOR: 'rgba(0, 199, 80, 0.85)',
+  ERROR_COLOR: 'rgba(209, 0, 0, 0.85)'
 }
 
 export const SERVERS = {

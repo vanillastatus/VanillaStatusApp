@@ -17,7 +17,6 @@ import moment from 'moment'
 import { connect } from 'react-redux'
 import { parseStatus } from '../util/parser'
 
-import Stats from './stats'
 import Grid from './grid'
 import { statsPoll } from '../modules/stats'
 
@@ -49,7 +48,6 @@ class App extends Component {
       return parseStatus(serverWithId, autoqueue)
     })
 
-    console.log(_.sortBy(items, 'order'))
     return <Grid items={_.sortBy(items, 'order' )} />
   }
 
@@ -73,8 +71,8 @@ class App extends Component {
             style={{ backgroundColor: PRIMARY_COLOR, height: 56 }}
             title={TITLE}
             subtitle={subtitle}
-            titleColor='#f5f5f5'
-            subtitleColor='#f5f5f5'
+            titleColor='rgb(245, 245, 245)'
+            subtitleColor='rgba(245, 245, 245, 0.8)'
           />
         </View>
         { this.props.hasFetched ? this.renderStats(servers, autoqueue) : this.renderActivityIndicator() }
