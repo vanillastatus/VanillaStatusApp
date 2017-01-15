@@ -21,32 +21,32 @@ export const THEME = {
 export const SERVERS = {
   elysium_pvp: {
     name: 'Elysium',
-    image: 'http://i.imgur.com/7Gisr3n.jpg',
+    image: 'https://i.imgur.com/7Gisr3n.jpg',
     order: 3
   },
   zethkur_pvp: {
     name: 'Zethkur',
-    image: 'http://i.imgur.com/ICElhLj.jpg',
+    image: 'https://i.imgur.com/ICElhLj.jpg',
     order: 4
   },
   anathema_pvp: {
     name: 'Anathema',
-    image: 'http://i.imgur.com/B9QGZu3.jpg',
+    image: 'https://i.imgur.com/B9QGZu3.jpg',
     order: 1
   },
   darrowshire_pve: {
     name: 'Darrowshire',
-    image: 'http://i.imgur.com/KcWcbPo.jpg',
+    image: 'https://i.imgur.com/KcWcbPo.jpg',
     order: 2
   },
   logon: {
     name: 'Elysium Login Server',
-    image: 'http://i.imgur.com/9ywu91U.jpg',
+    image: 'https://i.imgur.com/9ywu91U.jpg',
     order: 5
   },
   website: {
     name: 'Elysium Website',
-    image: 'http://i.imgur.com/n1w5Sbn.jpg',
+    image: 'https://i.imgur.com/n1w5Sbn.jpg',
     order: 6
   }
 }
