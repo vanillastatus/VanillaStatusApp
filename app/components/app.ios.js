@@ -37,7 +37,7 @@ class App extends Component {
   renderActivityIndicator() {
     const size = Platform.OS === 'ios' ? 1 : 100
     return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View style={{ flex: 1, justifyContent: 'center', backgroundColor: PRIMARY_COLOR }}>
         <ActivityIndicator size={size} color={ACCENT_COLOR} style={{ height: 100 }} />
       </View>
     )
