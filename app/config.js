@@ -27,12 +27,12 @@ export const SERVERS = {
     image: 'http://i.imgur.com/ICElhLj.jpg',
     order: 4
   },
-  nostalrius_pvp: {
+  anathema_pvp: {
     name: 'Anathema',
     image: 'http://i.imgur.com/B9QGZu3.jpg',
     order: 1
   },
-  nostalrius_pve: {
+  darrowshire_pve: {
     name: 'Darrowshire',
     image: 'http://i.imgur.com/KcWcbPo.jpg',
     order: 2
