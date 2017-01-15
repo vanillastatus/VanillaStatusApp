@@ -15,8 +15,9 @@ import {
 import _ from 'lodash'
 import moment from 'moment'
 import { connect } from 'react-redux'
+import { parseStatus } from '../util/parser'
 
-import Stats from './stats'
+import Grid from './grid'
 import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
@@ -42,7 +43,12 @@ class App extends Component {
   }
 
   renderStats(servers, autoqueue) {
-    return <Stats servers={servers} autoqueue={autoqueue} />
+    const items = Object.keys(servers).map((server) => {
+      const serverWithId = { ...servers[server], id: server }
+      return parseStatus(serverWithId, autoqueue)
+    })
+
+    return <Grid items={_.sortBy(items, 'order' )} />
   }
 
   render() {
@@ -65,8 +71,8 @@ class App extends Component {
             style={{ backgroundColor: PRIMARY_COLOR, height: 56 }}
             title={TITLE}
             subtitle={subtitle}
-            titleColor='#f5f5f5'
-            subtitleColor='#f5f5f5'
+            titleColor='rgb(245, 245, 245)'
+            subtitleColor='rgba(245, 245, 245, 0.8)'
           />
         </View>
         { this.props.hasFetched ? this.renderStats(servers, autoqueue) : this.renderActivityIndicator() }

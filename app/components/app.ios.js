@@ -14,8 +14,10 @@ import {
 import _ from 'lodash'
 import moment from 'moment'
 import { connect } from 'react-redux'
+import { parseStatus } from '../util/parser'
 
-import Stats from './stats'
+
+import Grid from './grid'
 import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
@@ -42,7 +44,12 @@ class App extends Component {
   }
 
   renderStats(servers, autoqueue) {
-    return <Stats servers={servers} autoqueue={autoqueue} />
+    const items = Object.keys(servers).map((server) => {
+      const serverWithId = { ...servers[server], id: server }
+      return parseStatus(serverWithId, autoqueue)
+    })
+
+    return <Grid items={_.sortBy(items, 'order' )} />
   }
 
   render() {

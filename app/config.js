@@ -12,24 +12,48 @@ export const CLASS_COLORS = {
 }
 
 export const THEME = {
-  PRIMARY_COLOR: '#525252',
-  ACCENT_COLOR: CLASS_COLORS.SHAMAN
+  PRIMARY_COLOR: '#121212',
+  ACCENT_COLOR: CLASS_COLORS.SHAMAN,
+  SUCCESS_COLOR: 'rgba(0, 199, 80, 0.85)',
+  ERROR_COLOR: 'rgba(209, 0, 0, 0.85)'
 }
 
 export const SERVERS = {
-  logon: 'Elysium Login Server',
-  website: 'Elysium Website',
-  elysium_pvp: 'Elysium PVP',
-  zethkur_pvp: 'Zethkur PVP',
-  nostalrius_pvp: 'Nostalrius PVP',
-  nostalrius_pve: 'Nostalrius PVE'
+  elysium_pvp: {
+    name: 'Elysium',
+    image: 'https://i.imgur.com/7Gisr3n.jpg',
+    order: 3
+  },
+  zethkur_pvp: {
+    name: 'Zethkur',
+    image: 'https://i.imgur.com/ICElhLj.jpg',
+    order: 4
+  },
+  anathema_pvp: {
+    name: 'Anathema',
+    image: 'https://i.imgur.com/B9QGZu3.jpg',
+    order: 1
+  },
+  darrowshire_pve: {
+    name: 'Darrowshire',
+    image: 'https://i.imgur.com/KcWcbPo.jpg',
+    order: 2
+  },
+  logon: {
+    name: 'Elysium Login Server',
+    image: 'https://i.imgur.com/9ywu91U.jpg',
+    order: 5
+  },
+  website: {
+    name: 'Elysium Website',
+    image: 'https://i.imgur.com/n1w5Sbn.jpg',
+    order: 6
+  }
 }
 
-export const REALMS = {
-  elysium_pvp: true,
-  zethkur_pvp: true,
-  nostalrius_pvp: true,
-  nostalrius_pve: true
+export const SERVICES = {
+  logon: true,
+  website: true
 }
 
 export const SOON = {
