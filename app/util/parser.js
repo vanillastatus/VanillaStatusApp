@@ -2,8 +2,8 @@ import _ from 'lodash'
 
 import { SERVERS, SERVICES, SOON } from '../config'
 
-export function parseQueue(server, autoqueue) {
-  const queueData = _.find(autoqueue.servers, { name: SERVERS[server.id] }) || {}
+export function parseQueue(server, { servers = {}, export_time }) {
+  const queueData = servers[server.id] || {}
   const { queueAvailable, queue } = queueData
 
   if (!queueAvailable && SOON[server.id]) {
