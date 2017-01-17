@@ -24,7 +24,13 @@ class Box extends Component {
     }
 
     return (
-      <Text style={styles.subtitle}>{this.props.subtitle}</Text>
+      <Text
+        ellipsizeMode='tail'
+        numberOfLines={1}
+        style={styles.subtitle}
+      >
+        {this.props.subtitle}
+      </Text>
     )
   }
 
@@ -44,7 +50,13 @@ class Box extends Component {
         />
       <View style={[ styles.boxFooter, { width, height: footerHeight }]}>
           <View style={styles.textWrapper}>
-            <Text style={styles.title}>{this.props.title}</Text>
+            <Text
+              ellipsizeMode='tail'
+              numberOfLines={1}
+              style={styles.title}
+            >
+              {this.props.title}
+            </Text>
             { this.renderSubtitle() }
           </View>
           { this.displayIcon() }
