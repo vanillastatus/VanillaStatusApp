@@ -1,4 +1,5 @@
-# ElysiumStatusApp
+<img src='./images/banner.png' />
+
 >Mobile App for Android and iOS designed to monitor WoW server https://elysium-project.org/. It makes the process of checking elysium-project easier while on the go.
 
 * **Current Status**: Alpha
