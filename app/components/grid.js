@@ -20,6 +20,20 @@ import Box from './material/box'
 
 class Grid extends Component {
 
+  constructor(props) {
+    super(props)
+    const { height, width } = Dimensions.get('window')
+    this.state = {
+      height,
+      width
+    }
+  }
+
+  onLayout(event){
+    const { height, width } = event.nativeEvent.layout;
+    this.setState({ height, width })
+  }
+
   groupItems(items, itemsPerRow) {
     const groups = []
     let group = { items: [] }
@@ -46,7 +60,7 @@ class Grid extends Component {
   }
 
   getItemSize(group) {
-    let { height, width } = Dimensions.get('window')
+    let { height, width } = this.state
 
     // Account for margins
     width -= (group.items.length * MARGIN_SIZE)
@@ -100,7 +114,10 @@ class Grid extends Component {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     return (
-      <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
+      <View
+        onLayout={this.onLayout.bind(this)}
+        style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}
+      >
         <ListView
           {...this.props}
           style={{ marginLeft: MARGIN_SIZE, marginRight: MARGIN_SIZE }}
