@@ -6,9 +6,9 @@
 
 <img src='./images/android.png' height='500' / > <img src='./images/ios.png' height='500' />
 #### Download
-###### Android
-Not yet released
-###### iOS
+###### Android (Alpha)
+https://play.google.com/store/apps/details?id=com.elysiumstatus
+###### iOS (Waiting on Developer Account)
 Not yet released
 * **
 # Getting Started
