@@ -38,7 +38,6 @@ export function parseStatus(server, autoqueue) {
     status,
     image,
     id,
-    order,
-    dontGroup: isService
+    order
   }
 }
