@@ -40,13 +40,13 @@ export const SERVERS = {
     order: 2
   },
   logon: {
-    name: 'Elysium Login Server',
-    image: 'https://i.imgur.com/9ywu91U.jpg',
+    name: 'Login Server',
+    image: 'http://i.imgur.com/JX1rAjE.jpg',
     order: 5
   },
   website: {
-    name: 'Elysium Website',
-    image: 'https://i.imgur.com/n1w5Sbn.jpg',
+    name: 'Website',
+    image: 'http://i.imgur.com/Mzrli3R.jpg',
     order: 6
   }
 }
