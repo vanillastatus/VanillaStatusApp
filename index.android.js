@@ -1,11 +1,29 @@
 import React, { Component } from 'react'
-import {  AppRegistry } from 'react-native'
+import {  AppRegistry,  View } from 'react-native'
 
-import Main from './app/components/main'
+import {
+  NavigationProvider,
+  StackNavigation,
+  SharedElementOverlay,
+} from '@exponent/ex-navigation'
+
+import Router from './app/navigation/router'
 
 export default class ElysiumStatus extends Component {
   render() {
-    return <Main />
+    return (
+      <View style={{ flex: 1 }}>
+        <NavigationProvider router={Router}>
+          <SharedElementOverlay>
+            <StackNavigation
+              id="root"
+              initialRoute={Router.getRoute('Main')}
+            />
+          </SharedElementOverlay>
+        </NavigationProvider>
+      </View>
+
+    )
   }
 }
 
