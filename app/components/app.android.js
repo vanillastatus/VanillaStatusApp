@@ -17,7 +17,7 @@ import moment from 'moment'
 import { connect } from 'react-redux'
 import { parseStatus } from '../util/parser'
 
-import Grid from './grid'
+import Grid from './shared_elements/grid'
 import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
