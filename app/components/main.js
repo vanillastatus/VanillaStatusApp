@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 
 import * as reducers from '../modules'
 
-import App from './app'
+import Router from '../router'
 
 const middleware = [ thunk ]
 
@@ -23,7 +23,7 @@ export default class Main extends Component {
   render() {
     return (
       <Provider store={store}>
-        <App />
+        <Router />
       </Provider>
     )
   }

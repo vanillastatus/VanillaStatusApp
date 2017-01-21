@@ -65,16 +65,6 @@ class App extends Component {
     return (
       <View style={{ flex: 1 }}>
         <StatusBar translucent={true} backgroundColor='hsla(0, 0%, 0%, 0)' />
-        <View style={{ elevation: 4, backgroundColor: PRIMARY_COLOR }}>
-          <View style={{ backgroundColor: PRIMARY_COLOR, height: StatusBar.currentHeight }} />
-          <ToolbarAndroid
-            style={{ backgroundColor: PRIMARY_COLOR, height: 56 }}
-            title={TITLE}
-            subtitle={subtitle}
-            titleColor='rgb(245, 245, 245)'
-            subtitleColor='rgba(245, 245, 245, 0.8)'
-          />
-        </View>
         { this.props.hasFetched ? this.renderStats(servers, autoqueue) : this.renderActivityIndicator() }
       </View>
     );
