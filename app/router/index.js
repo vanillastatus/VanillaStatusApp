@@ -6,17 +6,21 @@ import fadeBottom from './animations/fade_bottom'
 
 import App from '../components/app'
 const ConnectedRouter = connect()(Router)
+import withNavbar from './with_navbar'
 
 export default class AppRouter extends Component {
   render () {
-    <ConnectedRouter
-      hideNavBar={true}
-      panHandlers={null}
-      animationStyle={fadeBottom}
-    >
-      <Scene key='main'>
-        <Scene key='grid' component={App} title='Elysium Status' initial={true} />
-      </Scene>
-    </ConnectedRouter>
+
+    return (
+      <ConnectedRouter
+        hideNavBar={true}
+        panHandlers={null}
+        animationStyle={fadeBottom}
+      >
+        <Scene key='main'>
+          <Scene key='grid' component={withNavbar(App)} title='Elysium Status' initial={true} />
+        </Scene>
+      </ConnectedRouter>
+    )
   }
 }

@@ -53,18 +53,9 @@ class App extends Component {
 
   render() {
     const { servers, autoqueue } = this.props.data
-    let subtitle = 'refreshing...'
-    if (_.get(servers, 'logon.last_updated')) {
-      subtitle = `Last updated ${moment(servers.logon.last_updated).fromNow()}`
-    }
-
-    if (this.props.isFetching) {
-      subtitle = 'refreshing...'
-    }
 
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar translucent={true} backgroundColor='hsla(0, 0%, 0%, 0)' />
         { this.props.hasFetched ? this.renderStats(servers, autoqueue) : this.renderActivityIndicator() }
       </View>
     );
