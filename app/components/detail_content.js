@@ -143,7 +143,6 @@ const styles = StyleSheet.create({
 })
 
 function mapStateToProps({ stats }, { id }) {
-  console.log(parseQueue(id, stats.data.autoqueue))
   return {
     ...parseRealmData(id, stats.data.realmdata || {}),
     queue: parseQueue(id, stats.data.autoqueue || {})

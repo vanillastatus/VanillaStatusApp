@@ -46,12 +46,12 @@ export const SERVERS = {
   },
   logon: {
     name: 'Login Server',
-    image: 'http://i.imgur.com/JX1rAjE.jpg',
+    image: 'https://i.imgur.com/JX1rAjE.jpg',
     order: 5
   },
   website: {
     name: 'Website',
-    image: 'http://i.imgur.com/Mzrli3R.jpg',
+    image: 'https://i.imgur.com/Mzrli3R.jpg',
     order: 6
   }
 }

@@ -1,5 +1,16 @@
 import React, { PropTypes, Component } from 'react'
-import { View, Text, ScrollView, Image, Animated, StyleSheet, StatusBar, TouchableNativeFeedback } from 'react-native'
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  Animated,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+  Platform
+} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Actions } from 'react-native-router-flux'
 
@@ -8,9 +19,10 @@ import DetailContent from './detail_content'
 import { THEME } from '../config'
 const { PRIMARY_COLOR } = THEME
 
+const STATUS_BAR_HEIGHT = Platform.OS === 'android' ? StatusBar.currentHeight : 20
 const NAVBAR_HEIGHT = 56
 const HEADER_MAX_HEIGHT = 350
-const HEADER_MIN_HEIGHT = StatusBar.currentHeight + NAVBAR_HEIGHT
+const HEADER_MIN_HEIGHT = STATUS_BAR_HEIGHT + NAVBAR_HEIGHT
 const HEADER_SCROLL_DISTANCE =  HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT
 
 class Detail extends Component {
@@ -20,6 +32,32 @@ class Detail extends Component {
     this.state ={
       scrollY: new Animated.Value(0)
     }
+  }
+
+  renderBackButton() {
+    return Platform.select({
+      ios: () => (
+        <TouchableOpacity
+          hitSlop={{ top: 24, bottom: 24, left: 24, right: 24 }}
+          onPress={() => Actions.pop()}
+        >
+          <View style={styles.navbarIcon}>
+            <Icon name='arrow-back' size={24} color={'#ffffff'} />
+          </View>
+        </TouchableOpacity>
+      ),
+      android: () => (
+        <TouchableNativeFeedback
+          hitSlop={{ top: 24, bottom: 24, left: 24, right: 24 }}
+          background={TouchableNativeFeedback.Ripple('#ffffff', true)}
+          onPress={() => Actions.pop()}
+        >
+          <View style={styles.navbarIcon}>
+            <Icon name='arrow-back' size={24} color={'#ffffff'} />
+          </View>
+        </TouchableNativeFeedback>
+      )
+    })()
   }
 
   renderContent() {
@@ -65,7 +103,7 @@ class Detail extends Component {
       <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
         <Animated.View
           pointerEvents='none'
-          style={[ styles.navbar, { height: headerHeight, elevation: 4 }]}>
+          style={[ styles.navbar, { height: headerHeight, elevation: 4, zIndex: 4 }]}>
           <Animated.Image
             style={[
               styles.backgroundImage,
@@ -96,15 +134,7 @@ class Detail extends Component {
         </View>
         <View style={styles.iconContainer}>
           <View style={styles.iconRadius}>
-            <TouchableNativeFeedback
-              hitSlop={{ top: 24, bottom: 24, left: 24, right: 24 }}
-              background={TouchableNativeFeedback.Ripple('#ffffff', true)}
-              onPress={() => Actions.pop()}
-            >
-              <View style={styles.navbarIcon}>
-                <Icon name='arrow-back' size={24} color={'#ffffff'} />
-              </View>
-            </TouchableNativeFeedback>
+            {this.renderBackButton()}
           </View>
         </View>
       </View>
@@ -134,14 +164,16 @@ const styles = StyleSheet.create({
   },
   navbarIcon: {
     width: 24,
-    height: 24
+    height: 24,
+    backgroundColor: 'transparent'
   },
   iconContainer: {
     position: 'absolute',
     left: 0,
     // This basically means bottom: 6 since we can't use bottom values here
-    top: StatusBar.currentHeight + NAVBAR_HEIGHT - (48 + 6),
-    elevation: 4
+    top: STATUS_BAR_HEIGHT + NAVBAR_HEIGHT - (48 + 6),
+    elevation: 4,
+    zIndex: 25
   },
   iconRadius: {
     flex: 1,

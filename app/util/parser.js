@@ -33,7 +33,6 @@ export function parseQueue(id, { servers = {}, export_time }) {
 }
 
 export function parseRealmData(id, { servers = {}, available } = {}) {
-  // console.log(server, servers)s
   // What do with available boolean?
   return servers[id] || {}
 }
