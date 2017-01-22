@@ -101,7 +101,6 @@ const styles = StyleSheet.create({
 })
 
 function mapStateToProps({ router, stats }) {
-  console.log(router)
   return {
     router,
     ...stats

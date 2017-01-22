@@ -13,7 +13,7 @@ const middleware = [ thunk ]
 if (__DEV__) {
   const createLogger = require('redux-logger')
   const logger = createLogger()
-  middleware.push(logger)
+  // middleware.push(logger)
 }
 
 const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore)
