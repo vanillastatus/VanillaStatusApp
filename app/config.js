@@ -11,6 +11,11 @@ export const CLASS_COLORS = {
   WARRIOR: '#C79C6E'
 }
 
+export const FACTION_COLORS = {
+  HORDE: '#B71C1C',
+  ALLIANCE: '#2979FF'
+}
+
 export const THEME = {
   PRIMARY_COLOR: '#121212',
   ACCENT_COLOR: CLASS_COLORS.SHAMAN,

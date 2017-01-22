@@ -3,13 +3,15 @@ import { View, Text, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
 
-import { parseRealmData } from '../util/parser'
+import { parseRealmData, parseQueue } from '../util/parser'
+
+import { FACTION_COLORS } from '../config'
 
 class DetailContent extends Component {
 
   renderRealmData() {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.realmDataContainer}>
         <View style={styles.row}>
           <View style={styles.iconWrapper}>
             <View style={styles.icon}>
@@ -18,7 +20,16 @@ class DetailContent extends Component {
           </View>
           <Text style={styles.text}>{this.props.population}</Text>
           <Text style={styles.subtitle}>Population</Text>
-
+        </View>
+        <View style={styles.ruler} />
+        <View style={styles.row}>
+          <View style={styles.iconWrapper}>
+            <View style={styles.icon}>
+              <Icon name='linear-scale' size={36} color='#ffffff' />
+            </View>
+          </View>
+          <Text style={styles.text}>{this.props.queue || 'None'}</Text>
+        <Text style={styles.subtitle}>Queue</Text>
         </View>
         <View style={styles.ruler} />
         <View style={styles.row}>
@@ -32,14 +43,33 @@ class DetailContent extends Component {
         </View>
         <View style={styles.ruler} />
         <View style={styles.row}>
-          <Text style={styles.text}>{`${Math.floor(this.props.percentage_alliance).toFixed(0)}%`}</Text>
-          <Text style={styles.subtitle}>Alliance</Text>
+          <View style={styles.iconWrapper}>
+            <View style={styles.icon}>
+              <Icon name='equalizer' size={36} color='#ffffff' />
+            </View>
+          </View>
+          <View style={styles.barGraph}>
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: 36,
+              backgroundColor: FACTION_COLORS.ALLIANCE,
+              flex: Math.floor(this.props.percentage_alliance)}}
+            >
+              <Text style={{ color: 'white', fontSize: 16 }}>{`${Math.round(this.props.percentage_alliance).toFixed(0)}%`}</Text>
+           </View>
+
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: 36,
+              backgroundColor: FACTION_COLORS.HORDE,
+              flex: Math.floor(this.props.percentage_horde)}}
+            >
+              <Text style={{ color: 'white', fontSize: 16 }}>{`${Math.round(this.props.percentage_horde).toFixed(0)}%`}</Text>
+            </View>
+          </View>
         </View>
-        <View style={styles.row}>
-          <Text style={styles.text}>{`${Math.floor(this.props.percentage_horde).toFixed(0)}%`}</Text>
-          <Text style={styles.subtitle}>Horde</Text>
-        </View>
-        <View style={styles.ruler} />
       </View>
     )
   }
@@ -66,6 +96,10 @@ class DetailContent extends Component {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 8,
+    marginBottom: 24
+  },
+  realmDataContainer: {
+    flex: 1
   },
   row: {
     height: 72,
@@ -78,6 +112,13 @@ const styles = StyleSheet.create({
     top: 0,
     width: 72,
     height: 72
+  },
+  barGraph: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingLeft: 72,
+    paddingRight: 16,
+    paddingTop: 16
   },
   icon: {
     flex: 1,
@@ -96,14 +137,16 @@ const styles = StyleSheet.create({
   },
   ruler: {
     marginLeft: 72,
-    backgroundColor: 'rgb(0, 0, 0)',
+    backgroundColor: 'rgb(159, 159, 159)',
     height: 1
   }
 })
 
 function mapStateToProps({ stats }, { id }) {
+  console.log(parseQueue(id, stats.data.autoqueue))
   return {
-    ...parseRealmData(id, stats.data.realmdata || {})
+    ...parseRealmData(id, stats.data.realmdata || {}),
+    queue: parseQueue(id, stats.data.autoqueue || {})
   }
 }
 

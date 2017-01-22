@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 import { SERVERS, SERVICES, SOON } from '../config'
 
-export function parseQueue(server, { servers = {}, export_time }) {
+export function parseSubtitle(server, { servers = {}, export_time }) {
   const queueData = servers[server.id] || {}
   const { queueAvailable, queue } = queueData
 
@@ -19,6 +19,18 @@ export function parseQueue(server, { servers = {}, export_time }) {
   }
 }
 
+export function parseQueue(id, { servers = {}, export_time }) {
+  const queueData = servers[id] || {}
+  const { queueAvailable, queue } = queueData
+
+  if (queueAvailable && queue > -1) {
+    return queue
+  }
+
+  if (!queueAvailable) {
+    return 'Unavailable'
+  }
+}
 
 export function parseRealmData(id, { servers = {}, available } = {}) {
   // console.log(server, servers)s
@@ -37,7 +49,7 @@ export function parseStatus(server, autoqueue, realmdata) {
 
   let subtitle
   if (!isService) {
-    subtitle = parseQueue(server, autoqueue)
+    subtitle = parseSubtitle(server, autoqueue)
   }
 
   return {
