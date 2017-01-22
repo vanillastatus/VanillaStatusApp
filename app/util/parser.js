@@ -19,13 +19,21 @@ export function parseQueue(server, { servers = {}, export_time }) {
   }
 }
 
-export function parseStatus(server, autoqueue) {
+
+export function parseRealmData(id, { servers = {}, available } = {}) {
+  // console.log(server, servers)s
+  // What do with available boolean?
+  return servers[id] || {}
+}
+
+export function parseStatus(server, autoqueue, realmdata) {
   const isService = SERVICES[server.id] || false
   const { status, id } = server
 
   const serverConfig = SERVERS[server.id] || {}
   const title = serverConfig.name || 'Unknow Realm'
   const { image, order } = serverConfig
+  const realmData = parseRealmData(server, realmdata)
 
   let subtitle
   if (!isService) {
@@ -38,6 +46,7 @@ export function parseStatus(server, autoqueue) {
     status,
     image,
     id,
+    isService,
     order
   }
 }

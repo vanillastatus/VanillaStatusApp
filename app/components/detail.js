@@ -3,6 +3,8 @@ import { View, Text, ScrollView, Image, Animated, StyleSheet, StatusBar, Touchab
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Actions } from 'react-native-router-flux'
 
+import DetailContent from './detail_content'
+
 import { THEME } from '../config'
 const { PRIMARY_COLOR } = THEME
 
@@ -21,14 +23,9 @@ class Detail extends Component {
   }
 
   renderContent() {
-    const data = Array.from({length: 30})
     return (
       <View style={{ paddingTop: HEADER_MAX_HEIGHT }}>
-        {data.map((_, i) =>
-          <View key={i} style={{ height: 40, backgroundColor: 'rgb(255, 255, 255)'}}>
-            <Text>{i}</Text>
-          </View>
-        )}
+        <DetailContent {...this.props} />
       </View>
     )
   }
@@ -78,11 +75,15 @@ class Detail extends Component {
           />
           <Animated.View style={[ styles.bar, { height: headerHeight } ]}>
             <View style={styles.bar}>
-              <Animated.Text style={[styles.title, { fontSize: fontSizeTranslate, paddingLeft: padLeftTranslate } ]}>{this.props.title}</Animated.Text>
+              <Animated.Text
+                style={[ styles.title, { fontSize: fontSizeTranslate, paddingLeft: padLeftTranslate } ]}
+              >
+                {this.props.title}
+              </Animated.Text>
             </View>
           </Animated.View>
         </Animated.View>
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
           <ScrollView
             style={{ flex: 1 }}
             scrollEventThrottle={16}
@@ -160,4 +161,5 @@ const styles = StyleSheet.create({
     resizeMode: 'cover'
   }
 })
+
 export default Detail
