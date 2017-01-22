@@ -18,7 +18,6 @@ import { connect } from 'react-redux'
 import { parseStatus } from '../util/parser'
 
 import Grid from './grid'
-import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
 
@@ -28,10 +27,6 @@ const { PRIMARY_COLOR, ACCENT_COLOR } = THEME
 class App extends Component {
   constructor(props) {
     super(props)
-  }
-
-  componentDidMount() {
-    this.props.dispatch(statsPoll(15))
   }
 
   renderActivityIndicator() {

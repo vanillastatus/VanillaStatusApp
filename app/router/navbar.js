@@ -25,7 +25,10 @@ class NavBar extends Component {
 
   render () {
     const { servers, autoqueue } = this.props.data
-    let navbarTextPadding = 16
+    if (this.props.overrideNavbar) {
+      return <View />
+    }
+
     let subtitle = 'refreshing...'
     if (_.get(servers, 'logon.last_updated')) {
       subtitle = `Last updated ${moment(servers.logon.last_updated).fromNow()}`
@@ -36,12 +39,16 @@ class NavBar extends Component {
     }
 
     let navbarIcon = null
-    // navbarIcon =  (
-    //   <View style={styles.navbarIcon}>
-    //     <Icon name='arrow-back' size={24} color={'#ffffff'} />
-    //   </View>
-    // )
+    if (this.props.router.stackDepth) {
+      navbarIcon =  (
+        <View style={styles.navbarIcon}>
+          <Icon name='arrow-back' size={24} color={'#ffffff'} />
+        </View>
+      )
+    }
 
+
+    let navbarTextPadding = 16
     if (navbarIcon) {
       navbarTextPadding = 72
     }
@@ -94,6 +101,7 @@ const styles = StyleSheet.create({
 })
 
 function mapStateToProps({ router, stats }) {
+  console.log(router)
   return {
     router,
     ...stats
