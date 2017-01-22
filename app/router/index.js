@@ -17,6 +17,7 @@ export default class AppRouter extends Component {
         hideNavBar={true}
         panHandlers={null}
         animationStyle={fadeBottom}
+        duration={250}
       >
         <Scene key='main'>
           <Scene key='app' component={withNavbar(App)} title='Elysium Status' initial={true} />

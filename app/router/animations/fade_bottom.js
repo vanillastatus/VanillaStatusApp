@@ -7,7 +7,8 @@ export default function fadeBottom({ layout, position, scene }) {
 
   const opacity = position.interpolate({
     inputRange,
-    outputRange: [ 0, 1, 1]
+    outputRange: [ 0, 1, 1],
+    useNativeDriver: true
   })
 
   let translateX = 0
@@ -15,7 +16,8 @@ export default function fadeBottom({ layout, position, scene }) {
 
   translateY = position.interpolate({
     inputRange,
-    outputRange: [ height/4, 0, 0 ]
+    outputRange: [ height/4, 0, 0 ],
+    useNativeDriver: true
   })
 
   return {
