@@ -4,14 +4,30 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
 
 import DetailRow from './detail_row'
+import StackedBar from '../material/charts/stacked_bar'
 
-import { parseRealmData, parseQueue } from '../../util/parser'
+import { parseRealmData, parseQueue, generateRatioGraphData } from '../../util/parser'
 
-import { FACTION_COLORS } from '../../config'
+function FactionRatio({ alliance, horde }) {
+  if (!alliance || !horde) {
+    return <DetailRow icon='equalizer' hideDivider='true' text='Faction Ratio Unavailable'/>
+  }
+
+  return (
+    <DetailRow
+      icon='equalizer'
+      hideDivider='true'
+    >
+      <StackedBar data={generateRatioGraphData(alliance, horde)} />
+    </DetailRow>
+  )
+}
 
 class DetailContent extends Component {
 
   renderRealmData() {
+    const { percentage_alliance, percentage_horde } = this.props
+
     return (
       <View style={styles.realmDataContainer}>
         <DetailRow
@@ -29,29 +45,7 @@ class DetailContent extends Component {
           text={this.props.uptime || 'Unavailable '}
           label='Uptime'
         />
-        <View style={styles.row}>
-          <View style={styles.iconWrapper}>
-            <View style={styles.icon}>
-              <Icon name='equalizer' size={36} color='#ffffff' />
-            </View>
-          </View>
-          <View style={styles.barGraph}>
-            <View style={[ styles.bar, {
-                backgroundColor: FACTION_COLORS.ALLIANCE,
-                flex: Math.floor(this.props.percentage_alliance)
-              } ]}
-            >
-              <Text style={{ color: 'white', fontSize: 16 }}>{`${Math.round(this.props.percentage_alliance).toFixed(0)}%`}</Text>
-            </View>
-            <View style={[ styles.bar, {
-                backgroundColor: FACTION_COLORS.HORDE,
-                flex: Math.floor(this.props.percentage_horde)
-              } ]}
-            >
-              <Text style={{ color: 'white', fontSize: 16 }}>{`${Math.round(this.props.percentage_horde).toFixed(0)}%`}</Text>
-            </View>
-          </View>
-        </View>
+        <FactionRatio alliance={percentage_alliance} horde={percentage_horde} />
       </View>
     )
   }
@@ -77,35 +71,6 @@ const styles = StyleSheet.create({
   },
   realmDataContainer: {
     flex: 1
-  },
-  row: {
-    height: 72,
-    justifyContent: 'center',
-    backgroundColor: 'transparent'
-  },
-  iconWrapper: {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    width: 72,
-    height: 72
-  },
-  barGraph: {
-    flex: 1,
-    flexDirection: 'row',
-    paddingLeft: 72,
-    paddingRight: 16,
-    paddingTop: 16
-  },
-  bar: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 36
-  },
-  icon: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   }
 })
 

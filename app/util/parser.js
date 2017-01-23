@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import { SERVERS, SERVICES, SOON } from '../config'
+import { SERVERS, SERVICES, SOON, FACTION_COLORS } from '../config'
 
 export function parseSubtitle(server, { servers = {}, export_time }) {
   const queueData = servers[server.id] || {}
@@ -60,4 +60,20 @@ export function parseStatus(server, autoqueue, realmdata) {
     isService,
     order
   }
+}
+
+export function generateRatioGraphData(allianceValue, hordeValue) {
+  const alliance = {
+    value: Math.floor(allianceValue),
+    color: FACTION_COLORS.ALLIANCE,
+    label: `${Math.round(allianceValue).toFixed(0)}%`
+  }
+
+  const horde = {
+    value: Math.floor(hordeValue),
+    color: FACTION_COLORS.HORDE,
+    label: `${Math.round(hordeValue).toFixed(0)}%`
+  }
+
+  return [ alliance, horde ]
 }
