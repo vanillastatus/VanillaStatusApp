@@ -16,7 +16,7 @@ import { Actions } from 'react-native-router-flux'
 
 import DetailContent from './detail_content'
 
-import { THEME } from '../config'
+import { THEME } from '../../config'
 const { PRIMARY_COLOR } = THEME
 
 const STATUS_BAR_HEIGHT = Platform.OS === 'android' ? StatusBar.currentHeight : 20
