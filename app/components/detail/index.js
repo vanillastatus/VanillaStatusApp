@@ -1,9 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import {
   View,
-  Text,
   ScrollView,
-  Image,
   Animated,
   StyleSheet,
   StatusBar,
@@ -24,7 +22,6 @@ const STATUS_BAR_HEIGHT = Platform.OS === 'android' ? StatusBar.currentHeight : 
 const NAVBAR_HEIGHT = 56
 const HEADER_MAX_HEIGHT = 350
 const HEADER_MIN_HEIGHT = STATUS_BAR_HEIGHT + NAVBAR_HEIGHT
-const HEADER_SCROLL_DISTANCE =  HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT
 
 class Detail extends Component {
   constructor(props) {
@@ -62,6 +59,7 @@ class Detail extends Component {
   }
 
   onScroll() {
+    // returns a callback function that sets scrollY state form listening to scroll events
     return Animated.event([ { nativeEvent: { contentOffset: { y: this.state.scrollY }}} ])
   }
 
@@ -77,17 +75,14 @@ class Detail extends Component {
           minHeight={HEADER_MIN_HEIGHT}
           animatedScrollPosition={this.state.scrollY}
         />
-        <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
-          <ScrollView
-            style={{ flex: 1 }}
-            scrollEventThrottle={16}
-            onScroll={this.onScroll()}
-          >
-            <View style={{ paddingTop: HEADER_MAX_HEIGHT }}>
-              <DetailContent {...this.props} />
-            </View>
-          </ScrollView>
-        </View>
+        <ScrollView
+          style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}
+          contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT }}
+          scrollEventThrottle={16}
+          onScroll={this.onScroll()}
+        >
+          <DetailContent {...this.props} />
+        </ScrollView>
         <View style={styles.iconContainer}>
           <View style={styles.iconRadius}>
             {this.renderBackButton()}
@@ -99,25 +94,6 @@ class Detail extends Component {
 }
 
 const styles = StyleSheet.create({
-  navbar: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: PRIMARY_COLOR,
-    overflow: 'hidden'
-  },
-  bar: {
-    height: 350,
-    justifyContent: 'flex-end',
-    marginBottom: 16
-  },
-  title: {
-    backgroundColor: 'transparent',
-    fontWeight: '400',
-    fontSize: 22,
-    color: 'hsl(0, 0%, 100%)'
-  },
   navbarIcon: {
     width: 24,
     height: 24,
@@ -138,15 +114,6 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24
-  },
-  backgroundImage: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    width: null,
-    height: HEADER_MAX_HEIGHT,
-    resizeMode: 'cover'
   }
 })
 
