@@ -15,6 +15,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Actions } from 'react-native-router-flux'
 
 import DetailContent from './detail_content'
+import AnimatedHeader from './animated_header'
 
 import { THEME } from '../../config'
 const { PRIMARY_COLOR } = THEME
@@ -60,76 +61,31 @@ class Detail extends Component {
     })()
   }
 
-  renderContent() {
-    return (
-      <View style={{ paddingTop: HEADER_MAX_HEIGHT }}>
-        <DetailContent {...this.props} />
-      </View>
-    )
+  onScroll() {
+    return Animated.event([ { nativeEvent: { contentOffset: { y: this.state.scrollY }}} ])
   }
 
   render() {
-    const headerHeight = this.state.scrollY.interpolate({
-      inputRange: [ 0, HEADER_SCROLL_DISTANCE ],
-      outputRange: [ HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT ],
-      extrapolate: 'clamp'
-    })
-
-    const imageOpacity = this.state.scrollY.interpolate({
-      inputRange: [ 0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE ],
-      outputRange: [ 1, 1, 0 ],
-      extrapolate: 'clamp'
-    })
-
-    const imageTranslate = this.state.scrollY.interpolate({
-      inputRange: [ 0, HEADER_SCROLL_DISTANCE ],
-      outputRange: [ 0, -50 ],
-      extrapolate: 'clamp'
-    })
-
-    const fontSizeTranslate = this.state.scrollY.interpolate({
-      inputRange: [ 0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE ],
-      outputRange: [ 44, 44, 20 ],
-      extrapolate: 'clamp'
-    })
-
-    const padLeftTranslate = this.state.scrollY.interpolate({
-      inputRange: [ 0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE ],
-      outputRange: [ 16, 16, 72 ],
-      extrapolate: 'clamp'
-    })
 
     return (
       <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
-        <Animated.View
-          pointerEvents='none'
-          style={[ styles.navbar, { height: headerHeight, elevation: 4, zIndex: 4 }]}>
-          <Animated.Image
-            style={[
-              styles.backgroundImage,
-              { opacity: imageOpacity, transform: [{ translateY: imageTranslate }]}
-            ]}
-            source={{ uri: this.props.image }}
-          />
-          <Animated.View style={[ styles.bar, { height: headerHeight } ]}>
-            <View style={styles.bar}>
-              <Animated.Text
-                style={[ styles.title, { fontSize: fontSizeTranslate, paddingLeft: padLeftTranslate } ]}
-              >
-                {this.props.title}
-              </Animated.Text>
-            </View>
-          </Animated.View>
-        </Animated.View>
+        <AnimatedHeader
+          title={this.props.title}
+          image={this.props.image}
+          color={PRIMARY_COLOR}
+          maxHeight={HEADER_MAX_HEIGHT}
+          minHeight={HEADER_MIN_HEIGHT}
+          animatedScrollPosition={this.state.scrollY}
+        />
         <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
           <ScrollView
             style={{ flex: 1 }}
             scrollEventThrottle={16}
-            onScroll={Animated.event(
-              [ { nativeEvent: { contentOffset: { y: this.state.scrollY }}} ]
-            )}
+            onScroll={this.onScroll()}
           >
-            {this.renderContent()}
+            <View style={{ paddingTop: HEADER_MAX_HEIGHT }}>
+              <DetailContent {...this.props} />
+            </View>
           </ScrollView>
         </View>
         <View style={styles.iconContainer}>
