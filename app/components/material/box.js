@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   StyleSheet,
   Text,
   View,
   Image
-} from 'react-native';
+} from 'react-native'
+
+import Press from './buttons/press'
 
 class Box extends Component {
 
@@ -42,26 +44,28 @@ class Box extends Component {
     }
 
     return (
-      <View style={this.props.style}>
-        <Image
-          resizeMode='cover'
-          style={{ position: 'absolute', height, width }}
-          source={{ uri: this.props.imageURL }}
-        />
-      <View style={[ styles.boxFooter, { width, height: footerHeight }]}>
-          <View style={styles.textWrapper}>
-            <Text
-              ellipsizeMode='tail'
-              numberOfLines={1}
-              style={styles.title}
-            >
-              {this.props.title}
-            </Text>
-            { this.renderSubtitle() }
+      <Press onPress={this.props.onPress}>
+        <View style={this.props.style}>
+          <Image
+            resizeMode='cover'
+            style={{ height, width }}
+            source={{ uri: this.props.imageURL }}
+          />
+        <View style={[ styles.boxFooter, { width, height: footerHeight }]}>
+            <View style={styles.textWrapper}>
+              <Text
+                ellipsizeMode='tail'
+                numberOfLines={1}
+                style={styles.title}
+              >
+                {this.props.title}
+              </Text>
+              { this.renderSubtitle() }
+            </View>
+            { this.displayIcon() }
           </View>
-          { this.displayIcon() }
         </View>
-      </View>
+      </Press>
     )
   }
 }

@@ -30,10 +30,6 @@ class App extends Component {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.dispatch(statsPoll(15))
-  }
-
   renderActivityIndicator() {
     const size = Platform.OS === 'ios' ? 1 : 100
     return (
@@ -54,24 +50,9 @@ class App extends Component {
 
   render() {
     const { servers, autoqueue } = this.props.data
-    let subtitle = 'refreshing...'
-    if (_.get(servers, 'logon.last_updated')) {
-      subtitle = `Last updated ${moment(servers.logon.last_updated).fromNow()}`
-    }
-
-    if (this.props.isFetching) {
-      subtitle = 'refreshing...'
-    }
 
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar translucent={true} barStyle='light-content' backgroundColor='hsla(0, 0%, 0%, 0)' />
-        <View style={styles.appbar}>
-          <View style={styles.appbarText}>
-            <Text style={styles.title}>{TITLE}</Text>
-            <Text style={styles.subtitle}>{subtitle}</Text>
-          </View>
-        </View>
         { this.props.hasFetched ? this.renderStats(servers, autoqueue) : this.renderActivityIndicator() }
       </View>
     );

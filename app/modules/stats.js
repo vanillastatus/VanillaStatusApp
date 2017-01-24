@@ -51,7 +51,7 @@ export function fetchStats() {
   return { type: FETCH }
 }
 
-export function error(error) {
+export function errorStats(error) {
   return { type: ERROR, error }
 }
 
@@ -88,7 +88,7 @@ export function statsPoll(timeout = 60000) {
         })
         .catch(error => {
           dispatch(statsPoll(100000))
-          dispatch(error(error))
+          dispatch(errorStats(error))
         })
     }
   }

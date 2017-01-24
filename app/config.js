@@ -11,6 +11,11 @@ export const CLASS_COLORS = {
   WARRIOR: '#C79C6E'
 }
 
+export const FACTION_COLORS = {
+  HORDE: '#C62828',
+  ALLIANCE: '#1565C0'
+}
+
 export const THEME = {
   PRIMARY_COLOR: '#121212',
   ACCENT_COLOR: CLASS_COLORS.SHAMAN,
@@ -41,12 +46,12 @@ export const SERVERS = {
   },
   logon: {
     name: 'Login Server',
-    image: 'http://i.imgur.com/JX1rAjE.jpg',
+    image: 'https://i.imgur.com/JX1rAjE.jpg',
     order: 5
   },
   website: {
     name: 'Website',
-    image: 'http://i.imgur.com/Mzrli3R.jpg',
+    image: 'https://i.imgur.com/Mzrli3R.jpg',
     order: 6
   }
 }

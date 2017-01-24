@@ -6,10 +6,12 @@ import {
   ScrollView,
   Button,
   ListView,
-  Image
+  Image,
+  Platform
 } from 'react-native';
 
 import Dimensions from 'Dimensions'
+import { Actions as RouterActions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { THEME } from '../config'
@@ -95,6 +97,7 @@ class Grid extends Component {
           style={{ marginLeft, marginBottom, width, height }}
           title={item.title}
           subtitle={item.subtitle}
+          onPress={() => { RouterActions.detail({...item }) }}
           imageURL={item.image}
           icon={icon}
         />
@@ -120,6 +123,7 @@ class Grid extends Component {
       >
         <ListView
           {...this.props}
+          contentContainerStyle={{ top: Platform.select({ android: 0, ios: 76 }) }}
           style={{ marginLeft: MARGIN_SIZE, marginRight: MARGIN_SIZE }}
           renderRow={this.renderGroup.bind(this)}
           dataSource={ds.cloneWithRows(groups)}
