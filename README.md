@@ -62,10 +62,10 @@ Please submit all bug reports through the repository's Issue Tracker and they wi
 List of features where help is desired.
 
 1. ~~Realm Stats - Enhanced realm Stats from https://elysium-project.org/status~~
-3. Push Notifications - Realm status notifications
+2. Push Notifications - Realm status notifications
   * User opt in
   * Customizable Notifications (UP, Down)
-2. Server Status History - Detailed history of Server statuses
+3. Server Status History - Detailed history of Server statuses
 4.  Autologin - Login into wow from anywhere (Bypass the Queues)
 
 ## Versioning
