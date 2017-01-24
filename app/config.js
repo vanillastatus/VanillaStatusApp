@@ -12,8 +12,8 @@ export const CLASS_COLORS = {
 }
 
 export const FACTION_COLORS = {
-  HORDE: '#B71C1C',
-  ALLIANCE: '#2979FF'
+  HORDE: '#C62828',
+  ALLIANCE: '#1565C0'
 }
 
 export const THEME = {
