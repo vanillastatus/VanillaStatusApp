@@ -9,11 +9,10 @@ import {
   TouchableNativeFeedback,
   Platform
 } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import { Actions } from 'react-native-router-flux'
 
 import DetailContent from './detail_content'
 import AnimatedHeader from './animated_header'
+import BackButton from '../../router/back_button'
 
 import { THEME } from '../../config'
 const { PRIMARY_COLOR } = THEME
@@ -27,35 +26,9 @@ class Detail extends Component {
   constructor(props) {
     super(props)
 
-    this.state ={
+    this.state = {
       scrollY: new Animated.Value(0)
     }
-  }
-
-  renderBackButton() {
-    return Platform.select({
-      ios: () => (
-        <TouchableOpacity
-          hitSlop={{ top: 24, bottom: 24, left: 24, right: 24 }}
-          onPress={() => Actions.pop()}
-        >
-          <View style={styles.navbarIcon}>
-            <Icon name='arrow-back' size={24} color={'#ffffff'} />
-          </View>
-        </TouchableOpacity>
-      ),
-      android: () => (
-        <TouchableNativeFeedback
-          hitSlop={{ top: 24, bottom: 24, left: 24, right: 24 }}
-          background={TouchableNativeFeedback.Ripple('#ffffff', true)}
-          onPress={() => Actions.pop()}
-        >
-          <View style={styles.navbarIcon}>
-            <Icon name='arrow-back' size={24} color={'#ffffff'} />
-          </View>
-        </TouchableNativeFeedback>
-      )
-    })()
   }
 
   onScroll() {
@@ -66,7 +39,7 @@ class Detail extends Component {
   render() {
 
     return (
-      <View style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}>
+      <View style={styles.fill}>
         <AnimatedHeader
           title={this.props.title}
           image={this.props.image}
@@ -76,44 +49,26 @@ class Detail extends Component {
           animatedScrollPosition={this.state.scrollY}
         />
         <ScrollView
-          style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}
-          contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT }}
+          style={styles.fill}
+          contentContainerStyle={styles.contentContainerStyle}
           scrollEventThrottle={16}
           onScroll={this.onScroll()}
         >
           <DetailContent {...this.props} />
         </ScrollView>
-        <View style={styles.iconContainer}>
-          <View style={styles.iconRadius}>
-            {this.renderBackButton()}
-          </View>
-        </View>
+        <BackButton />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  navbarIcon: {
-    width: 24,
-    height: 24,
-    backgroundColor: 'transparent'
-  },
-  iconContainer: {
-    position: 'absolute',
-    left: 0,
-    // This basically means bottom: 6 since we can't use bottom values here
-    top: STATUS_BAR_HEIGHT + NAVBAR_HEIGHT - (48 + 6),
-    elevation: 4,
-    zIndex: 25
-  },
-  iconRadius: {
+  fill: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 48,
-    height: 48,
-    borderRadius: 24
+    backgroundColor: PRIMARY_COLOR
+  },
+  contentContainerStyle: {
+    paddingTop: HEADER_MAX_HEIGHT
   }
 })
 
