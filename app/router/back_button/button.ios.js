@@ -15,7 +15,7 @@ class Button extends Component {
         onPress={() => Actions.pop()}
       >
         <View style={styles.icon}>
-          <Icon name='arrow-back' size={24} color={'#ffffff'} />
+          <Icon name='keyboard-arrow-left' size={36} color={'#ffffff'} />
         </View>
       </TouchableOpacity>
     )
