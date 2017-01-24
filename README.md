@@ -3,8 +3,11 @@
 >Mobile App for Android and iOS designed to monitor WoW server https://elysium-project.org/. It makes the process of checking elysium-project easier while on the go.
 
 * **Current Status**: Alpha
+#### Status
+<img src='./images/android.png' height='500' /> <img src='./images/ios.png' height='500' />
+#### Realm Stats
+<img src='./images/android_realm_stats.png' height='500' /> <img src='./images/ios_realm_stats.png' height='500' />
 
-<img src='./images/android.png' height='500' / > <img src='./images/ios.png' height='500' />
 #### Download
 ###### Android (Alpha)
 https://play.google.com/store/apps/details?id=com.elysiumstatus
@@ -58,11 +61,11 @@ Please submit all bug reports through the repository's Issue Tracker and they wi
 ### Product Roadmap
 List of features where help is desired.
 
-1. Realm Stats - Enhanced realm Stats from https://elysium-project.org/status
-2. Server Status History - Detailed history of Server statuses
-3.  Push Notifications - Realm status notifications
+1. ~~Realm Stats - Enhanced realm Stats from https://elysium-project.org/status~~
+3. Push Notifications - Realm status notifications
   * User opt in
   * Customizable Notifications (UP, Down)
+2. Server Status History - Detailed history of Server statuses
 4.  Autologin - Login into wow from anywhere (Bypass the Queues)
 
 ## Versioning
