@@ -22,6 +22,10 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+# Fire Cloud Messaging
+#
+google-services.json
+
 # Android/IntelliJ
 #
 build/

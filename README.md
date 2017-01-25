@@ -9,7 +9,8 @@
 
 #### Realm Stats
 <img src='./images/android_realm_stats.png' height='400' /> <img src='./images/ios_realm_stats.png' height='400' />
-
+#### Realm Alert Push Notifications
+<img src='./images/android_push.png' height='400' />
 #### Download
 ###### Android (Alpha)
 https://play.google.com/store/apps/details?id=com.elysiumstatus
