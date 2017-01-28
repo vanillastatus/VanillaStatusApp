@@ -97,7 +97,7 @@ class Grid extends Component {
           style={{ marginLeft, marginBottom, width, height }}
           title={item.title}
           subtitle={item.subtitle}
-          onPress={() => { RouterActions.detail({...item }) }}
+          onPress={() => { RouterActions.detail({ id: item.id }) }}
           imageURL={item.image}
           icon={icon}
         />
