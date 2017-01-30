@@ -10,6 +10,8 @@ import Press from '../material/buttons/press'
 
 import { parseStatus, parseRealmData, parseQueue, generateRatioGraphData } from '../../util/parser'
 
+const ENV = __DEV__ ? 'dev' : 'production'
+
 function FactionRatio({ alliance, horde }) {
   if (!alliance || !horde) {
     return <DetailRow icon='equalizer' hideDivider='true' text='Faction Ratio Unavailable'/>
@@ -33,7 +35,7 @@ class DetailContent extends Component {
   }
 
   componentDidMount() {
-    AsyncStorage.getItem(`/topics/${this.props.id}`)
+    AsyncStorage.getItem(`${ENV}.elysium.${this.props.id}`)
       .then((response) => {
         const value = response === 'true'
         this.setState({ subscribed: value })
@@ -42,13 +44,13 @@ class DetailContent extends Component {
 
   onPress() {
     if (!this.state.subscribed) {
-      Fcm.subscribeToTopic(`/topics/${this.props.id}`)
+      Fcm.subscribeToTopic(`${ENV}.elysium.${this.props.id}`)
       this.setState({ subscribed: true })
-      AsyncStorage.setItem(`/topics/${this.props.id}`, 'true')
+      AsyncStorage.setItem(`${ENV}.elysium.${this.props.id}`, 'true')
     } else {
-      Fcm.unsubscribeFromTopic(`/topics/${this.props.id}`)
+      Fcm.unsubscribeFromTopic(`${ENV}.elysium.${this.props.id}`)
       this.setState({ subscribed: false })
-      AsyncStorage.setItem(`/topics/${this.props.id}`, 'false')
+      AsyncStorage.setItem(`${ENV}.elysium.${this.props.id}`, 'false')
     }
   }
 

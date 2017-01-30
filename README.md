@@ -27,6 +27,18 @@ What things you need to install the project
 React native has a great setup guide which should guide you through everything you need to do get started
 https://facebook.github.io/react-native/docs/getting-started.html
 
+#### Config files (required)
+#### Android (google-services.json)
+1. Visit https://firebase.google.com/ and create a free account.
+2. Create a new project
+3. Click Add Firebase to your Android app
+4. Use `com.elysiumstatus.dev` as Package name
+5. Add a nickname something like `Elysium Status Development`
+6. Click add app
+7. It should have downloaded a `google-services.json` file.
+8. Move that file to `android/app/` directory
+9. That's it!
+
 ## Installing
 After you have react-native running, forked & cloned the repo. Running the development project is simple.
 ### Android
@@ -34,7 +46,7 @@ In your project directory use the [`react-native-cli`](https://www.npmjs.com/pac
 ```
 react-native run-android
 ```
-It should spawn a react native packager and the development app should automatically be installed and started on your device or emulator.
+It should spawn a react native packager and the development app should automatically be installed. The cli will attempt to start the app on the emulator, but will not find it. It will need to be manually opened.
 
 >[*Make sure you have a device connected or an emulator running*](https://facebook.github.io/react-native/docs/getting-started.html#starting-the-android-virtual-device)
 
