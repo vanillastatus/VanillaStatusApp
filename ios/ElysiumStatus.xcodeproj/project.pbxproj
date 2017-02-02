@@ -19,7 +19,6 @@
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
@@ -34,6 +33,8 @@
 		660F1C0C0D2947DE84BC05D3 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A1E1F33C57F41F19738BF08 /* MaterialIcons.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8BA37C58E9404192A48A4607 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87915C7ACA24571AEA2153E /* libRNVectorIcons.a */; };
+		9C182C2C1E42EAE8006637F2 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9C182C2B1E42EAE8006637F2 /* iTunesArtwork */; };
+		9C182C481E42EAF2006637F2 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */; };
 		BE29D8E63713487A8B2FA249 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D927896697714BD897A1DE1B /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
@@ -245,7 +246,6 @@
 		13B07F961A680F5B00A75B9A /* ElysiumStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElysiumStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ElysiumStatus/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ElysiumStatus/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ElysiumStatus/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ElysiumStatus/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ElysiumStatus/main.m; sourceTree = "<group>"; };
@@ -260,6 +260,8 @@
 		7A1E1F33C57F41F19738BF08 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8EA9917CB50C4908AE47EC42 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		9C182C2B1E42EAE8006637F2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = "../../ios-icon-generator/stuff/iTunesArtwork"; sourceTree = "<group>"; };
+		9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; name = "iTunesArtwork@2x"; path = "../../ios-icon-generator/stuff/iTunesArtwork@2x"; sourceTree = "<group>"; };
 		B5410C70FA1E4A33BF08D954 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		D87915C7ACA24571AEA2153E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		D927896697714BD897A1DE1B /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -382,7 +384,6 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = ElysiumStatus;
@@ -482,6 +483,8 @@
 		D1EAE7BAD80349D4A4CBA62C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */,
+				9C182C2B1E42EAE8006637F2 /* iTunesArtwork */,
 				F6D7185D42FB4CB0992B3AA0 /* Entypo.ttf */,
 				749D1B3C11F74A93987D0F76 /* EvilIcons.ttf */,
 				D927896697714BD897A1DE1B /* FontAwesome.ttf */,
@@ -547,6 +550,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 3CJJ5FDSLF;
 					};
 				};
 			};
@@ -817,15 +823,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				1AB097AD92B348C491377D32 /* Entypo.ttf in Resources */,
 				378A36AA32764B4492A9342C /* EvilIcons.ttf in Resources */,
 				BE29D8E63713487A8B2FA249 /* FontAwesome.ttf in Resources */,
 				6122950AD22E43DDB623EB41 /* Foundation.ttf in Resources */,
 				3602EE81A5DC440F9B0ACAF8 /* Ionicons.ttf in Resources */,
+				9C182C2C1E42EAE8006637F2 /* iTunesArtwork in Resources */,
 				1B4EE0B9ED49404DA4AD3EBE /* MaterialCommunityIcons.ttf in Resources */,
 				660F1C0C0D2947DE84BC05D3 /* MaterialIcons.ttf in Resources */,
 				09BAC38A4DB44BC6B4AF74CA /* Octicons.ttf in Resources */,
+				9C182C481E42EAF2006637F2 /* iTunesArtwork@2x in Resources */,
 				0B41834C100046319C8C4077 /* SimpleLineIcons.ttf in Resources */,
 				5D2448CF607142A597AF64A2 /* Zocial.ttf in Resources */,
 			);
@@ -878,18 +885,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = ElysiumStatus;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -934,14 +929,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
 				INFOPLIST_FILE = ElysiumStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elysiumstatus;
 				PRODUCT_NAME = ElysiumStatus;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -951,14 +950,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
 				INFOPLIST_FILE = ElysiumStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elysiumstatus;
 				PRODUCT_NAME = ElysiumStatus;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
