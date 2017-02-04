@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import { View, Text, StyleSheet, AsyncStorage } from 'react-native'
+import { View, Text, StyleSheet, AsyncStorage, Platform } from 'react-native'
 import Fcm from 'react-native-fcm'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
@@ -34,23 +34,42 @@ class DetailContent extends Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    AsyncStorage.getItem(`${ENV}.elysium.${this.props.id}`)
+  getTopic(id) {
+    return Platform.select({
+      ios: `/topics/ios.${ENV}.elysium.${id}`,
+      android: `android.${ENV}.elysium.${id}`
+    })
+  }
+
+  setSubscriptionState({ id }) {
+    AsyncStorage.getItem(this.getTopic(id))
       .then((response) => {
         const value = response === 'true'
         this.setState({ subscribed: value })
       })
   }
 
+  componentDidMount() {
+    this.setSubscriptionState(this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.id !== nextProps.id) {
+      this.setSubscriptionState(nextProps)
+    }
+  }
+
   onPress() {
+    const topic = this.getTopic(this.props.id)
     if (!this.state.subscribed) {
-      Fcm.subscribeToTopic(`${ENV}.elysium.${this.props.id}`)
+      Fcm.requestPermissions() // for iOS
+      Fcm.subscribeToTopic(topic)
+      AsyncStorage.setItem(topic, 'true')
       this.setState({ subscribed: true })
-      AsyncStorage.setItem(`${ENV}.elysium.${this.props.id}`, 'true')
     } else {
-      Fcm.unsubscribeFromTopic(`${ENV}.elysium.${this.props.id}`)
+      Fcm.unsubscribeFromTopic(topic)
+      AsyncStorage.setItem(topic, 'false')
       this.setState({ subscribed: false })
-      AsyncStorage.setItem(`${ENV}.elysium.${this.props.id}`, 'false')
     }
   }
 
