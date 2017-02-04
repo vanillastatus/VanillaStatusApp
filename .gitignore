@@ -22,6 +22,10 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+# Fire Cloud Messaging
+#
+google-services.json
+GoogleService-Info.plist
 
 # Android/IntelliJ
 #
@@ -43,6 +47,10 @@ buck-out/
 android/app/libs
 *.keystore
 *.jks
+
+# PODS
+Pods/
+ElysiumStatus.xcworkspace/
 
 # fastlane
 #

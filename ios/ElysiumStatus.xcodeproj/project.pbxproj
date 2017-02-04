@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -25,8 +24,11 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1AB097AD92B348C491377D32 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6D7185D42FB4CB0992B3AA0 /* Entypo.ttf */; };
 		1B4EE0B9ED49404DA4AD3EBE /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B669FF253449D6A0972C3C /* MaterialCommunityIcons.ttf */; };
+		203383DAB5A53697A639C04B /* Pods_ElysiumStatusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF3EC2A02C6611F21021080 /* Pods_ElysiumStatusTests.framework */; };
+		352A2B62E90F454E9237D1DD /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 611F678D90594393A147E0DA /* libRNFIRMessaging.a */; };
 		3602EE81A5DC440F9B0ACAF8 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65CDE33E9C984B6AA3C1918E /* Ionicons.ttf */; };
 		378A36AA32764B4492A9342C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 749D1B3C11F74A93987D0F76 /* EvilIcons.ttf */; };
+		4079037DB61284206DC1C2AC /* Pods_ElysiumStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604B360D13976FC11EADDCC /* Pods_ElysiumStatus.framework */; };
 		5D2448CF607142A597AF64A2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8195B9207842F69A989343 /* Zocial.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		6122950AD22E43DDB623EB41 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D95FF680C6640BBAA73B691 /* Foundation.ttf */; };
@@ -36,6 +38,7 @@
 		9C182C2C1E42EAE8006637F2 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9C182C2B1E42EAE8006637F2 /* iTunesArtwork */; };
 		9C182C481E42EAF2006637F2 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */; };
 		BE29D8E63713487A8B2FA249 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D927896697714BD897A1DE1B /* FontAwesome.ttf */; };
+		352A2B62E90F454E9237D1DD /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 611F678D90594393A147E0DA /* libRNFIRMessaging.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +231,13 @@
 			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
 			remoteInfo = RNVectorIcons;
 		};
+		9CF1DC731E42FBB8009F0380 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83E24C9EE1CA4E56B896A6FF /* RNFIRMessaging.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFIRMessaging;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -252,20 +262,31 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		16E34D58881649BF9931967F /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		32B669FF253449D6A0972C3C /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		5AF3EC2A02C6611F21021080 /* Pods_ElysiumStatusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElysiumStatusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D95FF680C6640BBAA73B691 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		611F678D90594393A147E0DA /* libRNFIRMessaging.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFIRMessaging.a; sourceTree = "<group>"; };
 		65CDE33E9C984B6AA3C1918E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		6604B360D13976FC11EADDCC /* Pods_ElysiumStatus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElysiumStatus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749D1B3C11F74A93987D0F76 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		74AD59DF00D440C45E55023D /* Pods-ElysiumStatusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElysiumStatusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElysiumStatusTests/Pods-ElysiumStatusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A1E1F33C57F41F19738BF08 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		83E24C9EE1CA4E56B896A6FF /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
+		83E327C61FF3AD571E077546 /* Pods-ElysiumStatusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElysiumStatusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElysiumStatusTests/Pods-ElysiumStatusTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EA9917CB50C4908AE47EC42 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		987A62C5C8150B473C2BA142 /* Pods-ElysiumStatus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElysiumStatus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElysiumStatus/Pods-ElysiumStatus.debug.xcconfig"; sourceTree = "<group>"; };
 		9C182C2B1E42EAE8006637F2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = "../../ios-icon-generator/stuff/iTunesArtwork"; sourceTree = "<group>"; };
 		9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; name = "iTunesArtwork@2x"; path = "../../ios-icon-generator/stuff/iTunesArtwork@2x"; sourceTree = "<group>"; };
+		9CF1DC831E430117009F0380 /* ElysiumStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ElysiumStatus.entitlements; path = ElysiumStatus/ElysiumStatus.entitlements; sourceTree = "<group>"; };
 		B5410C70FA1E4A33BF08D954 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		CCC3FE84CDEE976D5A156CF0 /* Pods-ElysiumStatus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElysiumStatus.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElysiumStatus/Pods-ElysiumStatus.release.xcconfig"; sourceTree = "<group>"; };
 		D87915C7ACA24571AEA2153E /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		D927896697714BD897A1DE1B /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		F6D7185D42FB4CB0992B3AA0 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		83E24C9EE1CA4E56B896A6FF /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; name = "RNFIRMessaging.xcodeproj"; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		611F678D90594393A147E0DA /* libRNFIRMessaging.a */ = {isa = PBXFileReference; name = "libRNFIRMessaging.a"; path = "libRNFIRMessaging.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				203383DAB5A53697A639C04B /* Pods_ElysiumStatusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +315,8 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				8BA37C58E9404192A48A4607 /* libRNVectorIcons.a in Frameworks */,
+				352A2B62E90F454E9237D1DD /* libRNFIRMessaging.a in Frameworks */,
+				4079037DB61284206DC1C2AC /* Pods_ElysiumStatus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +403,7 @@
 		13B07FAE1A68108700A75B9A /* ElysiumStatus */ = {
 			isa = PBXGroup;
 			children = (
+				9CF1DC831E430117009F0380 /* ElysiumStatus.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -402,6 +427,15 @@
 				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		263D246593A6B16DEC584CEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6604B360D13976FC11EADDCC /* Pods_ElysiumStatus.framework */,
+				5AF3EC2A02C6611F21021080 /* Pods_ElysiumStatusTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -437,6 +471,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				8EA9917CB50C4908AE47EC42 /* RNVectorIcons.xcodeproj */,
+				83E24C9EE1CA4E56B896A6FF /* RNFIRMessaging.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -458,6 +493,8 @@
 				00E356EF1AD99517003FC87E /* ElysiumStatusTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				D1EAE7BAD80349D4A4CBA62C /* Resources */,
+				EBA9C05CFC4F9DFC9CC82FD1 /* Pods */,
+				263D246593A6B16DEC584CEF /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -476,6 +513,14 @@
 			isa = PBXGroup;
 			children = (
 				9C1DA4F41E29C8350086E419 /* libRNVectorIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CF1DC571E42FBB8009F0380 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CF1DC741E42FBB8009F0380 /* libRNFIRMessaging.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -499,6 +544,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		EBA9C05CFC4F9DFC9CC82FD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				987A62C5C8150B473C2BA142 /* Pods-ElysiumStatus.debug.xcconfig */,
+				CCC3FE84CDEE976D5A156CF0 /* Pods-ElysiumStatus.release.xcconfig */,
+				74AD59DF00D440C45E55023D /* Pods-ElysiumStatusTests.debug.xcconfig */,
+				83E327C61FF3AD571E077546 /* Pods-ElysiumStatusTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,9 +562,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ElysiumStatusTests" */;
 			buildPhases = (
+				73D87400AAE22E2BFFD287E5 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				8B66353975B1B1843216A73B /* [CP] Embed Pods Frameworks */,
+				F370985FC22B6AD528C97B7B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -524,10 +583,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ElysiumStatus" */;
 			buildPhases = (
+				7A172E349708847A8202E2F3 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				48F3CCAB9DF87CB0190F1C15 /* [CP] Embed Pods Frameworks */,
+				55E58E36FEAC5BA3848732CC /* [CP] Copy Pods Resources */,
+				9C8030121E45884E00051543 /* Copy GoogleService-Info.plist */,
 			);
 			buildRules = (
 			);
@@ -549,10 +612,22 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3CJJ5FDSLF;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 3CJJ5FDSLF;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -611,6 +686,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 9CF1DC571E42FBB8009F0380 /* Products */;
+					ProjectRef = 83E24C9EE1CA4E56B896A6FF /* RNFIRMessaging.xcodeproj */;
 				},
 				{
 					ProductGroup = 9C1DA4D71E29C8350086E419 /* Products */;
@@ -808,6 +887,13 @@
 			remoteRef = 9C1DA4F31E29C8350086E419 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9CF1DC741E42FBB8009F0380 /* libRNFIRMessaging.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFIRMessaging.a;
+			remoteRef = 9CF1DC731E42FBB8009F0380 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -855,6 +941,110 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		48F3CCAB9DF87CB0190F1C15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ElysiumStatus/Pods-ElysiumStatus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55E58E36FEAC5BA3848732CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ElysiumStatus/Pods-ElysiumStatus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73D87400AAE22E2BFFD287E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7A172E349708847A8202E2F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B66353975B1B1843216A73B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ElysiumStatusTests/Pods-ElysiumStatusTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C8030121E45884E00051543 /* Copy GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy GoogleService-Info.plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${PROJECT_DIR}/${PRODUCT_NAME}/${BUILD_PHASE}/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"";
+		};
+		F370985FC22B6AD528C97B7B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ElysiumStatusTests/Pods-ElysiumStatusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -888,8 +1078,10 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74AD59DF00D440C45E55023D /* Pods-ElysiumStatusTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -900,6 +1092,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElysiumStatus.app/ElysiumStatus";
@@ -908,14 +1101,17 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83E327C61FF3AD571E077546 /* Pods-ElysiumStatusTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
 				INFOPLIST_FILE = ElysiumStatusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -925,11 +1121,27 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 987A62C5C8150B473C2BA142 /* Pods-ElysiumStatus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_PHASE = dev;
+				CODE_SIGN_ENTITLEMENTS = ElysiumStatus/ElysiumStatus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseMessaging\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
+				);
 				INFOPLIST_FILE = ElysiumStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -938,19 +1150,35 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.elysiumstatus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elysiumstatus.dev;
 				PRODUCT_NAME = ElysiumStatus;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCC3FE84CDEE976D5A156CF0 /* Pods-ElysiumStatus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_PHASE = production;
+				CODE_SIGN_ENTITLEMENTS = ElysiumStatus/ElysiumStatus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseMessaging\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
+				);
 				INFOPLIST_FILE = ElysiumStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -959,9 +1187,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.elysiumstatus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elysiumstatus.production;
 				PRODUCT_NAME = ElysiumStatus;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

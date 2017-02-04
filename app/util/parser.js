@@ -37,14 +37,31 @@ export function parseRealmData(id, { servers = {}, available } = {}) {
   return servers[id] || {}
 }
 
-export function parseStatus(server, autoqueue, realmdata) {
-  const isService = SERVICES[server.id] || false
-  const { status, id } = server
+export function getTitle(id) {
+  const serverConfig = SERVERS[id] || {}
 
-  const serverConfig = SERVERS[server.id] || {}
-  const title = serverConfig.name || 'Unknow Realm'
-  const { image, order } = serverConfig
-  const realmData = parseRealmData(server, realmdata)
+  return serverConfig.name || 'Unknown Realm'
+}
+
+export function getImage(id) {
+  const serverConfig = SERVERS[id] || {}
+
+  return serverConfig.image
+}
+
+export function getOrder(id) {
+  const serverConfig = SERVERS[id] || {}
+
+  return serverConfig.order
+}
+
+export function parseStatus(server, autoqueue, realmdata) {
+  const { status, id } = server
+  const isService = SERVICES[id] || false
+  const serverConfig = SERVERS[id] || {}
+  const title = getTitle(id)
+  const image = getImage(id)
+  const order = getOrder(id)
 
   let subtitle
   if (!isService) {

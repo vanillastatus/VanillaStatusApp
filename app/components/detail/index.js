@@ -9,6 +9,9 @@ import {
   TouchableNativeFeedback,
   Platform
 } from 'react-native'
+import { connect } from 'react-redux'
+
+import { getTitle, getImage } from '../../util/parser'
 
 import DetailContent from './detail_content'
 import AnimatedHeader from './animated_header'
@@ -72,4 +75,11 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Detail
+function mapStateToProps(state, { id }) {
+  return {
+    title: getTitle(id),
+    image: getImage(id)
+  }
+}
+
+export default connect(mapStateToProps)(Detail)
