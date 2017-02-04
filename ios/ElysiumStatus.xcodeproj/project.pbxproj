@@ -38,7 +38,6 @@
 		8BA37C58E9404192A48A4607 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87915C7ACA24571AEA2153E /* libRNVectorIcons.a */; };
 		9C182C2C1E42EAE8006637F2 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9C182C2B1E42EAE8006637F2 /* iTunesArtwork */; };
 		9C182C481E42EAF2006637F2 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */; };
-		9C24A5901E44156C0074C0FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C24A58F1E44156C0074C0FB /* GoogleService-Info.plist */; };
 		BE29D8E63713487A8B2FA249 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D927896697714BD897A1DE1B /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
@@ -280,7 +279,6 @@
 		987A62C5C8150B473C2BA142 /* Pods-ElysiumStatus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElysiumStatus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElysiumStatus/Pods-ElysiumStatus.debug.xcconfig"; sourceTree = "<group>"; };
 		9C182C2B1E42EAE8006637F2 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = "../../ios-icon-generator/stuff/iTunesArtwork"; sourceTree = "<group>"; };
 		9C182C471E42EAF2006637F2 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; name = "iTunesArtwork@2x"; path = "../../ios-icon-generator/stuff/iTunesArtwork@2x"; sourceTree = "<group>"; };
-		9C24A58F1E44156C0074C0FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "ElysiumStatus/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9CF1DC831E430117009F0380 /* ElysiumStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ElysiumStatus.entitlements; path = ElysiumStatus/ElysiumStatus.entitlements; sourceTree = "<group>"; };
 		B5410C70FA1E4A33BF08D954 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		CCC3FE84CDEE976D5A156CF0 /* Pods-ElysiumStatus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElysiumStatus.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElysiumStatus/Pods-ElysiumStatus.release.xcconfig"; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 		13B07FAE1A68108700A75B9A /* ElysiumStatus */ = {
 			isa = PBXGroup;
 			children = (
-				9C24A58F1E44156C0074C0FB /* GoogleService-Info.plist */,
 				9CF1DC831E430117009F0380 /* ElysiumStatus.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -591,6 +588,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				48F3CCAB9DF87CB0190F1C15 /* [CP] Embed Pods Frameworks */,
 				55E58E36FEAC5BA3848732CC /* [CP] Copy Pods Resources */,
+				9C8030121E45884E00051543 /* Copy GoogleService-Info.plist */,
 			);
 			buildRules = (
 			);
@@ -612,6 +610,7 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3CJJ5FDSLF;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
@@ -920,7 +919,6 @@
 				9C182C481E42EAF2006637F2 /* iTunesArtwork@2x in Resources */,
 				0B41834C100046319C8C4077 /* SimpleLineIcons.ttf in Resources */,
 				5D2448CF607142A597AF64A2 /* Zocial.ttf in Resources */,
-				9C24A5901E44156C0074C0FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1016,6 +1014,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ElysiumStatusTests/Pods-ElysiumStatusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9C8030121E45884E00051543 /* Copy GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy GoogleService-Info.plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${PROJECT_DIR}/${PRODUCT_NAME}/${BUILD_PHASE}/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"";
+		};
 		F370985FC22B6AD528C97B7B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1067,6 +1079,7 @@
 			baseConfigurationReference = 74AD59DF00D440C45E55023D /* Pods-ElysiumStatusTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1090,6 +1103,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 3CJJ5FDSLF;
 				INFOPLIST_FILE = ElysiumStatusTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1108,6 +1122,7 @@
 			baseConfigurationReference = 987A62C5C8150B473C2BA142 /* Pods-ElysiumStatus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_PHASE = dev;
 				CODE_SIGN_ENTITLEMENTS = ElysiumStatus/ElysiumStatus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
@@ -1146,6 +1161,7 @@
 			baseConfigurationReference = CCC3FE84CDEE976D5A156CF0 /* Pods-ElysiumStatus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_PHASE = production;
 				CODE_SIGN_ENTITLEMENTS = ElysiumStatus/ElysiumStatus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
