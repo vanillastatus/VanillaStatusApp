@@ -15,7 +15,7 @@ import { Actions as RouterActions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import { THEME } from '../config'
-const { PRIMARY_COLOR, ACCENT_COLOR, SUCCESS_COLOR, ERROR_COLOR } = THEME
+const { PRIMARY_COLOR, BACKGROUND_COLOR, ACCENT_COLOR, SUCCESS_COLOR, ERROR_COLOR } = THEME
 const MARGIN_SIZE = 4
 
 import Box from './material/box'
@@ -123,7 +123,7 @@ class Grid extends Component {
     return (
       <View
         onLayout={this.onLayout.bind(this)}
-        style={{ flex: 1, backgroundColor: PRIMARY_COLOR }}
+        style={{ flex: 1, backgroundColor: BACKGROUND_COLOR }}
       >
         <ListView
           {...this.props}

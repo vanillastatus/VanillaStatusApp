@@ -18,12 +18,14 @@ import { parseStatus } from '../util/parser'
 
 
 import Grid from './grid'
+import Error from './material/error'
+
 import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
 
 const TITLE = 'Elysium Status'
-const { PRIMARY_COLOR, ACCENT_COLOR } = THEME
+const { PRIMARY_COLOR, BACKGROUND_COLOR, ACCENT_COLOR } = THEME
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +35,7 @@ class App extends Component {
   renderActivityIndicator() {
     const size = Platform.OS === 'ios' ? 1 : 100
     return (
-      <View style={{ flex: 1, justifyContent: 'center', backgroundColor: PRIMARY_COLOR }}>
+      <View style={{ flex: 1, justifyContent: 'center', backgroundColor: BACKGROUND_COLOR }}>
         <ActivityIndicator size={size} color={ACCENT_COLOR} style={{ height: 100 }} />
       </View>
     )
@@ -50,6 +52,10 @@ class App extends Component {
 
   render() {
     const { servers, autoqueue } = this.props.data
+
+    if (this.props.error) {
+      return <Error error={this.props.error} />
+    }
 
     return (
       <View style={{ flex: 1 }}>

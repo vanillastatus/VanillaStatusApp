@@ -29,13 +29,18 @@ class NavBar extends Component {
       )
     }
 
-    let subtitle = 'refreshing...'
+    let subtitle = 'Refreshing...'
     if (_.get(servers, 'logon.lastUpdated')) {
       subtitle = `Last updated ${moment(servers.logon.lastUpdated).fromNow()}`
     }
 
+    if (this.props.error) {
+      const retry = this.props.lastRetry ? `Last retry ${moment(this.props.lastRetry).fromNow()}` : ''
+      subtitle = `${retry}`
+    }
+
     if (this.props.isFetching) {
-      subtitle = 'refreshing...'
+      subtitle = 'Refreshing...'
     }
 
     let navbarIcon = null
