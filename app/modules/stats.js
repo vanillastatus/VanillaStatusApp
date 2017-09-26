@@ -74,10 +74,10 @@ export function statsPoll(timeout = 60000) {
 
   function statsFetch () {
     return dispatch => {
-      const path = '/status'
+      const pathname = '/status'
       dispatch(fetchStats())
 
-      return fetch(`${HOST}/${path}`, { headers: { 'x-api-key': xApiKey } })
+      return fetch(`${HOST}${pathname}`, { headers: { 'x-api-key': xApiKey } })
         .then(response => {
           if (!response) {
             throw new Error('No response from api')
@@ -111,7 +111,7 @@ export function statsPoll(timeout = 60000) {
           dispatch(statsPoll())
         })
         .catch(error => {
-          console.warn(`Api called failed ${path}`)
+          console.warn(`Api called failed ${pathname}`)
           dispatch(statsPoll(100000))
           dispatch(errorStats(error))
         })
