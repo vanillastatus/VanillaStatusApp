@@ -15,7 +15,7 @@ export function parseSubtitle(server, { servers = {}, export_time }) {
   }
 
   if (!queueAvailable) {
-    return 'Queue Unavailable'
+    return ''
   }
 }
 
@@ -25,10 +25,6 @@ export function parseQueue(id, { servers = {}, export_time }) {
 
   if (queueAvailable && queue > -1) {
     return queue
-  }
-
-  if (!queueAvailable) {
-    return 'Unavailable'
   }
 }
 
@@ -62,6 +58,7 @@ export function parseStatus(server, autoqueue, realmdata) {
   const title = getTitle(id)
   const image = getImage(id)
   const order = getOrder(id)
+  const dontGroup = serverConfig.dontGroup || false
 
   let subtitle
   if (!isService) {
@@ -75,7 +72,8 @@ export function parseStatus(server, autoqueue, realmdata) {
     image,
     id,
     isService,
-    order
+    order,
+    dontGroup
   }
 }
 

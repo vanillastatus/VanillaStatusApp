@@ -30,8 +30,8 @@ class NavBar extends Component {
     }
 
     let subtitle = 'refreshing...'
-    if (_.get(servers, 'logon.last_updated')) {
-      subtitle = `Last updated ${moment(servers.logon.last_updated).fromNow()}`
+    if (_.get(servers, 'logon.lastUpdated')) {
+      subtitle = `Last updated ${moment(servers.logon.lastUpdated).fromNow()}`
     }
 
     if (this.props.isFetching) {

@@ -49,7 +49,11 @@ class Grid extends Component {
           group = { items: [ item ] }
         }
       } else {
-        group.items.push(item)
+        if (item.dontGroup) {
+          groups.push({ items: [ item ] })
+        } else {
+          group.items.push(item)
+        }
       }
     })
 

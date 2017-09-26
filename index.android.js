@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {  AppRegistry } from 'react-native'
-import Fcm from 'react-native-fcm'
+import Fcm, { FCMEvent } from 'react-native-fcm'
 import { Actions as RouterActions } from 'react-native-router-flux'
 import Main from './app/components/main'
 
@@ -37,9 +37,9 @@ export default class ElysiumStatus extends Component {
       .catch(e => {
         console.log('InitialNotification Failure')
       })
-
-    this.notificationListener = Fcm.on('notification', handleNotification)
-    this.refreshTokenListener = Fcm.on('refreshToken', updateToken)
+      
+    this.notificationListener = Fcm.on(FCMEvent.Notification, handleNotification)
+    this.refreshTokenListener = Fcm.on(FCMEvent.RefreshToken, updateToken)
   }
 
   componentWillUnmount() {

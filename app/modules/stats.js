@@ -1,5 +1,5 @@
-import { HOST } from '../config'
 import { handleActions } from 'redux-actions'
+import { HOST, xApiKey } from '../keys.json'
 
 // Actions
 const FETCH = 'stats/FETCH'
@@ -72,7 +72,7 @@ export function statsPoll(timeout = 60000) {
   function statsFetch () {
     return dispatch => {
       dispatch(fetchStats())
-      return fetch(`${HOST}/stats`)
+    return fetch(`${HOST}/status`, { headers: { 'x-api-key': xApiKey } })
         .then(response => {
           if (response && response.status === 200) {
             return response.json()
@@ -87,6 +87,7 @@ export function statsPoll(timeout = 60000) {
           dispatch(statsPoll())
         })
         .catch(error => {
+          console.error(error)
           dispatch(statsPoll(100000))
           dispatch(errorStats(error))
         })
