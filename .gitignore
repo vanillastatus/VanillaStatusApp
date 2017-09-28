@@ -40,6 +40,7 @@ local.properties
 node_modules/
 npm-debug.log
 *.jsbundle
+keys.json
 
 # BUCK
 buck-out/

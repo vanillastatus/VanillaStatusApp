@@ -1,5 +1,5 @@
-import { HOST } from '../config'
 import { handleActions } from 'redux-actions'
+import { HOST, xApiKey } from '../keys.json'
 
 // Actions
 const FETCH = 'stats/FETCH'
@@ -11,6 +11,7 @@ const initialState = {
   isFetching: false,
   hasFetched: false,
   error: false,
+  lastRetry: null,
   data: {}
 }
 
@@ -19,6 +20,7 @@ export default handleActions({
   [FETCH]: (state, action) => {
     return {
       ...state,
+      lastRetry: new Date(),
       isFetching: true
     }
   },
@@ -26,6 +28,7 @@ export default handleActions({
     const { error } = action
     return {
       ...state,
+      isFetching: false,
       error
     }
   },
@@ -71,22 +74,44 @@ export function statsPoll(timeout = 60000) {
 
   function statsFetch () {
     return dispatch => {
+      const pathname = '/status'
       dispatch(fetchStats())
-      return fetch(`${HOST}/stats`)
+
+      return fetch(`${HOST}${pathname}`, { headers: { 'x-api-key': xApiKey } })
         .then(response => {
-          if (response && response.status === 200) {
-            return response.json()
-          } else {
-            return null
+          if (!response) {
+            throw new Error('No response from api')
           }
+
+          const { status, ok, headers } = response
+          const contentType = headers.get('content-type')
+
+          if (contentType && contentType.indexOf('application/json') !== -1) {
+            return response.json()
+              .then(data => ({
+                status,
+                ok,
+                data
+              }))
+          }
+
+          return Promise.resolve({
+            status,
+            ok: false
+          })
         })
-        .then(json => {
-          if (json) {
-            dispatch(updateStats(json))
+        .then(response => {
+          if (!response.ok || response.status !== 200) {
+            throw response
+          }
+
+          if (response.data && response.status === 200) {
+            dispatch(updateStats(response.data))
           }
           dispatch(statsPoll())
         })
         .catch(error => {
+          console.warn(`Api called failed ${pathname}`)
           dispatch(statsPoll(100000))
           dispatch(errorStats(error))
         })

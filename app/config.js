@@ -18,6 +18,7 @@ export const FACTION_COLORS = {
 
 export const THEME = {
   PRIMARY_COLOR: '#121212',
+  BACKGROUND_COLOR: '#212121',
   ACCENT_COLOR: CLASS_COLORS.SHAMAN,
   SUCCESS_COLOR: 'rgba(0, 199, 80, 0.85)',
   ERROR_COLOR: 'rgba(209, 0, 0, 0.85)'
@@ -27,32 +28,28 @@ export const SERVERS = {
   elysium_pvp: {
     name: 'Elysium',
     image: 'https://i.imgur.com/7Gisr3n.jpg',
-    order: 3
-  },
-  zethkur_pvp: {
-    name: 'Zethkur',
-    image: 'https://i.imgur.com/ICElhLj.jpg',
-    order: 4
+    dontGroup: true,
+    order: 1
   },
   anathema_pvp: {
     name: 'Anathema',
     image: 'https://i.imgur.com/B9QGZu3.jpg',
-    order: 1
+    order: 2
   },
   darrowshire_pve: {
     name: 'Darrowshire',
     image: 'https://i.imgur.com/KcWcbPo.jpg',
-    order: 2
+    order: 3
   },
   logon: {
     name: 'Login Server',
     image: 'https://i.imgur.com/JX1rAjE.jpg',
-    order: 5
+    order: 4
   },
   website: {
     name: 'Website',
     image: 'https://i.imgur.com/Mzrli3R.jpg',
-    order: 6
+    order: 5
   }
 }
 
@@ -64,5 +61,3 @@ export const SERVICES = {
 export const SOON = {
   // New servers
 }
-
-export const HOST = 'https://elysiumstatus.com'

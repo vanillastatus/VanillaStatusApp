@@ -1,4 +1,3 @@
-import { HOST } from '../config'
 import { handleActions } from 'redux-actions'
 
 // Actions
