@@ -1,42 +1,56 @@
 # Change Log
 
-## [1.0.0-rc3](https://github.com/elysiumstatus/ElysiumStatusApp/tree/HEAD) (1/23/17)
-
+## [1.0.0-rc4](https://github.com/vanillastatus/VanillaStatusApp/tree/HEAD) (9/28/17)
 **New Features**
-- Realm Stats View [\#26](https://github.com/elysiumstatus/ElysiumStatusApp/issues/26) ([code](https://github.com/elysiumstatus/ElysiumStatusApp/pull/32))
+- Realm Alerts (Beta) [\#26](https://github.com/vanillastatus/VanillaStatusApp/pull/36) ([code](https://github.com/vanillastatus/VanillaStatusApp/pull/36))
+- New Api [\#37](https://github.com/vanillastatus/VanillaStatusApp/pull/37) ([code](https://github.com/vanillastatus/VanillaStatusApp/pull/37))
 
-**Fixed bugs:**
-
-- Android Permission Issues [\#29](https://github.com/elysiumstatus/ElysiumStatusApp/issues/29)
-- \[fix\] remove unused android permissions [\#30](https://github.com/elysiumstatus/ElysiumStatusApp/pull/30) ([emmoistner](https://github.com/emmoistner))
-- \[fix\] add function to handle device rotation [\#23](https://github.com/elysiumstatus/ElysiumStatusApp/pull/23) ([emmoistner](https://github.com/emmoistner))
-- \[fix\] ellipse title, subtitle material box closes \#18 [\#20](https://github.com/elysiumstatus/ElysiumStatusApp/pull/20) ([emmoistner](https://github.com/emmoistner))
-
-**Closed issues:**
-
-- Adjust box sizes for login & website. [\#27](https://github.com/elysiumstatus/ElysiumStatusApp/issues/27)
-- Realm Stats Views [\#26](https://github.com/elysiumstatus/ElysiumStatusApp/issues/26)
-- iOS App Icon [\#17](https://github.com/elysiumstatus/ElysiumStatusApp/issues/17)
-- Android App Icon [\#16](https://github.com/elysiumstatus/ElysiumStatusApp/issues/16)
-- Android Release Process [\#14](https://github.com/elysiumstatus/ElysiumStatusApp/issues/14)
-- Grid view instead of card view. [\#5](https://github.com/elysiumstatus/ElysiumStatusApp/issues/5)
-- First Release [\#4](https://github.com/elysiumstatus/ElysiumStatusApp/issues/4)
-- Add product roadmap to readme [\#3](https://github.com/elysiumstatus/ElysiumStatusApp/issues/3)
-- Add setup guide to readme [\#2](https://github.com/elysiumstatus/ElysiumStatusApp/issues/2)
+**Fixed Bugs**
+- \[fix\] Add error screen [\#37](https://github.com/vanillastatus/VanillaStatusApp/pull/37) ([emmoistner](https://github.com/emmoistner))
+- \[fix\] Handle Api Errors better [\#37](https://github.com/vanillastatus/VanillaStatusApp/pull/37) ([emmoistner](https://github.com/emmoistner))
 
 **Merged pull requests:**
 
-- \[feature\] realm stats [\#32](https://github.com/elysiumstatus/ElysiumStatusApp/pull/32) ([emmoistner](https://github.com/emmoistner))
-- \[feature\] allow login server & website to group together [\#28](https://github.com/elysiumstatus/ElysiumStatusApp/pull/28) ([emmoistner](https://github.com/emmoistner))
-- \[readme\] update readme with android link [\#25](https://github.com/elysiumstatus/ElysiumStatusApp/pull/25) ([emmoistner](https://github.com/emmoistner))
-- \[feature\] add high res banner [\#22](https://github.com/elysiumstatus/ElysiumStatusApp/pull/22) ([emmoistner](https://github.com/emmoistner))
-- \[feature\] App Icons [\#19](https://github.com/elysiumstatus/ElysiumStatusApp/pull/19) ([emmoistner](https://github.com/emmoistner))
-- \[style\] changed primaryColor for taskbar, cleaned App name [\#11](https://github.com/elysiumstatus/ElysiumStatusApp/pull/11) ([emmoistner](https://github.com/emmoistner))
-- \[bug\] change parser to handle new autoqueue format [\#10](https://github.com/elysiumstatus/ElysiumStatusApp/pull/10) ([emmoistner](https://github.com/emmoistner))
-- \[fix\] loading background color now uses primary color [\#9](https://github.com/elysiumstatus/ElysiumStatusApp/pull/9) ([emmoistner](https://github.com/emmoistner))
-- \[readme\] enhanced readme.md [\#8](https://github.com/elysiumstatus/ElysiumStatusApp/pull/8) ([emmoistner](https://github.com/emmoistner))
-- \[feature\] Gridview closes \#5 [\#6](https://github.com/elysiumstatus/ElysiumStatusApp/pull/6) ([emmoistner](https://github.com/emmoistner))
-- update readme [\#1](https://github.com/elysiumstatus/ElysiumStatusApp/pull/1) ([emmoistner](https://github.com/emmoistner))
+- \[feature\] Realm Alerts [\#37](https://github.com/vanillastatus/VanillaStatusApp/pull/37) ([emmoistner](https://github.com/emmoistner))
+- \[fix\] New Api [\#36](https://github.com/vanillastatus/VanillaStatusApp/pull/36) ([emmoistner](https://github.com/emmoistner))
+
+## [1.0.0-rc3](https://github.com/vanillastatus/VanillaStatusApp/tree/HEAD) (1/23/17)
+
+**New Features**
+- Realm Stats View [\#26](https://github.com/vanillastatus/VanillaStatusApp/issues/26) ([code](https://github.com/vanillastatus/VanillaStatusApp/pull/32))
+
+**Fixed bugs:**
+
+- Android Permission Issues [\#29](https://github.com/vanillastatus/VanillaStatusApp/issues/29)
+- \[fix\] remove unused android permissions [\#30](https://github.com/vanillastatus/VanillaStatusApp/pull/30) ([emmoistner](https://github.com/emmoistner))
+- \[fix\] add function to handle device rotation [\#23](https://github.com/vanillastatus/VanillaStatusApp/pull/23) ([emmoistner](https://github.com/emmoistner))
+- \[fix\] ellipse title, subtitle material box closes \#18 [\#20](https://github.com/vanillastatus/VanillaStatusApp/pull/20) ([emmoistner](https://github.com/emmoistner))
+
+**Closed issues:**
+
+- Adjust box sizes for login & website. [\#27](https://github.com/vanillastatus/VanillaStatusApp/issues/27)
+- Realm Stats Views [\#26](https://github.com/vanillastatus/VanillaStatusApp/issues/26)
+- iOS App Icon [\#17](https://github.com/vanillastatus/VanillaStatusApp/issues/17)
+- Android App Icon [\#16](https://github.com/vanillastatus/VanillaStatusApp/issues/16)
+- Android Release Process [\#14](https://github.com/vanillastatus/VanillaStatusApp/issues/14)
+- Grid view instead of card view. [\#5](https://github.com/vanillastatus/VanillaStatusApp/issues/5)
+- First Release [\#4](https://github.com/vanillastatus/VanillaStatusApp/issues/4)
+- Add product roadmap to readme [\#3](https://github.com/vanillastatus/VanillaStatusApp/issues/3)
+- Add setup guide to readme [\#2](https://github.com/vanillastatus/VanillaStatusApp/issues/2)
+
+**Merged pull requests:**
+
+- \[feature\] realm stats [\#32](https://github.com/vanillastatus/VanillaStatusApp/pull/32) ([emmoistner](https://github.com/emmoistner))
+- \[feature\] allow login server & website to group together [\#28](https://github.com/vanillastatus/VanillaStatusApp/pull/28) ([emmoistner](https://github.com/emmoistner))
+- \[readme\] update readme with android link [\#25](https://github.com/vanillastatus/VanillaStatusApp/pull/25) ([emmoistner](https://github.com/emmoistner))
+- \[feature\] add high res banner [\#22](https://github.com/vanillastatus/VanillaStatusApp/pull/22) ([emmoistner](https://github.com/emmoistner))
+- \[feature\] App Icons [\#19](https://github.com/vanillastatus/VanillaStatusApp/pull/19) ([emmoistner](https://github.com/emmoistner))
+- \[style\] changed primaryColor for taskbar, cleaned App name [\#11](https://github.com/vanillastatus/VanillaStatusApp/pull/11) ([emmoistner](https://github.com/emmoistner))
+- \[bug\] change parser to handle new autoqueue format [\#10](https://github.com/vanillastatus/VanillaStatusApp/pull/10) ([emmoistner](https://github.com/emmoistner))
+- \[fix\] loading background color now uses primary color [\#9](https://github.com/vanillastatus/VanillaStatusApp/pull/9) ([emmoistner](https://github.com/emmoistner))
+- \[readme\] enhanced readme.md [\#8](https://github.com/vanillastatus/VanillaStatusApp/pull/8) ([emmoistner](https://github.com/emmoistner))
+- \[feature\] Gridview closes \#5 [\#6](https://github.com/vanillastatus/VanillaStatusApp/pull/6) ([emmoistner](https://github.com/emmoistner))
+- update readme [\#1](https://github.com/vanillastatus/VanillaStatusApp/pull/1) ([emmoistner](https://github.com/emmoistner))
 
 
 

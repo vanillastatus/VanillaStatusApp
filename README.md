@@ -11,11 +11,15 @@
 <img src='./images/android_realm_stats.png' height='400' /> <img src='./images/ios_realm_stats.png' height='400' />
 #### Realm Alert Push Notifications
 <img src='./images/android_push.png' height='400' />
+
 #### Download
+
 ###### Android (Alpha)
 https://play.google.com/store/apps/details?id=com.elysiumstatus
+
 ###### iOS (Waiting on Developer Account)
 Not yet released
+
 * **
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
