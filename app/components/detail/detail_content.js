@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import { View, Text, StyleSheet, AsyncStorage, Platform } from 'react-native'
+import { View, Text, StyleSheet, AsyncStorage, Platform, ToastAndroid } from 'react-native'
 import Fcm from 'react-native-fcm'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
@@ -59,6 +59,21 @@ class DetailContent extends Component {
     }
   }
 
+  toast() {
+    if (Platform.OS === 'android') {
+      let title = this.props.title
+
+      if (!this.props.title) {
+        title = 'the server'
+      } else if (this.props.isService) {
+        title = `the ${(title).toLowerCase()}`
+      }
+
+      const message = `We'll send you notifications when ${title} comes online`
+      ToastAndroid.show(message, ToastAndroid.SHORT)
+    }
+  }
+
   onPress() {
     const topic = this.getTopic(this.props.id)
     if (!this.state.subscribed) {
@@ -66,6 +81,7 @@ class DetailContent extends Component {
       Fcm.subscribeToTopic(topic)
       AsyncStorage.setItem(topic, 'true')
       this.setState({ subscribed: true })
+      this.toast()
     } else {
       Fcm.unsubscribeFromTopic(topic)
       AsyncStorage.setItem(topic, 'false')
@@ -107,7 +123,7 @@ class DetailContent extends Component {
         <Press onPress={this.onPress.bind(this)}>
           <View style={styles.subscribeButton}>
             <Text style={styles.subscribeText}>
-              {(this.state.subscribed ? 'Unsubscribe' : 'Subscribe').toUpperCase() }
+              {(this.state.subscribed ? 'Unsubscribe' : 'Subscribe (BETA)').toUpperCase() }
             </Text>
           </View>
         </Press>
