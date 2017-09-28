@@ -83,11 +83,14 @@ class DetailContent extends Component {
           text={this.props.population || 0}
           label='Population'
         />
-        <DetailRow
-          icon='linear-scale'
-          text={this.props.queue || 'None'}
-          label='Queue'
-        />
+        {/* // Commenting out queue since no longer have access to queue data
+            // Maybe return in the future
+          <DetailRow
+            icon='linear-scale'
+            text={this.props.queue || 'None'}
+            label='Queue'
+          />
+        */}
         <DetailRow
           icon='backup'
           text={this.props.uptime || 'Unavailable '}
