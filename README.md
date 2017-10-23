@@ -1,8 +1,8 @@
 <img src='./images/banner.png' />
 
->Mobile App for Android and iOS designed to monitor WoW server https://elysium-project.org/. It makes the process of checking elysium-project easier while on the go.
+>Mobile App for Android and iOS designed to monitor private WoW servers. It makes the process of checking wow server statuses easier while on the go.
 
-* **Current Status**: Alpha
+* **Current Status**: Beta
 
 #### Status
 <img src='./images/android.png' height='400' /> <img src='./images/ios.png' height='400' />
@@ -19,6 +19,10 @@ https://play.google.com/store/apps/details?id=com.elysiumstatus
 
 ###### iOS (Waiting on Developer Account)
 Not yet released
+
+**Supported Supported**
+  * Light's Hope
+  * Elysium project
 
 * **
 # Getting Started
@@ -37,7 +41,7 @@ https://facebook.github.io/react-native/docs/getting-started.html
 2. Create a new project
 3. Click Add Firebase to your Android app
 4. Use `com.elysiumstatus.dev` as Package name
-5. Add a nickname something like `Elysium Status Development`
+5. Add a nickname something like `Vanilla Status Development`
 6. Click add app
 7. It should have downloaded a `google-services.json` file.
 8. Move that file to `android/app/` directory

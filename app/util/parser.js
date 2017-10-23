@@ -1,12 +1,12 @@
 import _ from 'lodash'
 
-import { SERVERS, SERVICES, SOON, FACTION_COLORS } from '../config'
+import { FACTION_COLORS } from '../config'
 
 export function parseSubtitle(server, { servers = {}, export_time }) {
   const queueData = servers[server.id] || {}
   const { queueAvailable, queue } = queueData
 
-  if (!queueAvailable && SOON[server.id]) {
+  if (!queueAvailable && server.isSoon) {
     return 'Soon™'
   }
 
@@ -33,32 +33,41 @@ export function parseRealmData(id, { servers = {}, available } = {}) {
   return servers[id] || {}
 }
 
-export function getTitle(id) {
-  const serverConfig = SERVERS[id] || {}
-
-  return serverConfig.name || 'Unknown Realm'
+export function getOrganizationName(id, organization = {}) {
+  return organization.name
 }
 
-export function getImage(id) {
-  const serverConfig = SERVERS[id] || {}
-
-  return serverConfig.image
+export function getTitle(id, server = {}) {
+  return server.name || 'Unknown Realm'
 }
 
-export function getOrder(id) {
-  const serverConfig = SERVERS[id] || {}
+export function getImage(id, server = {}) {
+  return server.image
+}
 
-  return serverConfig.order
+export function getOrder(id, server = {}) {
+  return server.order
+}
+
+export function getIsService(id, server = {}) {
+  return !server.isRealm
+}
+
+export function getDontGroup(id, server = {}) {
+  return server.dontGroup || false
+}
+
+export function getOrganizationId(id, server = {}) {
+  return server.organizationId
 }
 
 export function parseStatus(server, autoqueue, realmdata) {
   const { status, id } = server
-  const isService = SERVICES[id] || false
-  const serverConfig = SERVERS[id] || {}
-  const title = getTitle(id)
-  const image = getImage(id)
-  const order = getOrder(id)
-  const dontGroup = serverConfig.dontGroup || false
+  const isService = getIsService(id, server)
+  const title = getTitle(id, server)
+  const image = getImage(id, server)
+  const order = getOrder(id, server)
+  const dontGroup = getDontGroup(id, server)
 
   let subtitle
   if (!isService) {

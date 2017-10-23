@@ -24,7 +24,7 @@ import { statsPoll } from '../modules/stats'
 
 import { THEME } from '../config'
 
-const TITLE = 'Elysium Status'
+const TITLE = 'Vanilla Status'
 const { PRIMARY_COLOR, BACKGROUND_COLOR, ACCENT_COLOR } = THEME
 
 class App extends Component {

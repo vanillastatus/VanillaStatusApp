@@ -42,7 +42,7 @@ export default class AppRouter extends Component {
         {...routerProps}
       >
         <Scene key='main'>
-          <Scene key='app' component={withNavbar(App)} title='Elysium Status' initial={true} />
+          <Scene key='app' component={withNavbar(App)} title='Vanilla Status' initial={true} />
           <Scene key='detail' component={withNavbar(Detail)} overrideNavbar={true} />
         </Scene>
       </ConnectedRouter>

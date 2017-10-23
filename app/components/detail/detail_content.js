@@ -3,12 +3,13 @@ import { View, Text, StyleSheet, AsyncStorage, Platform, ToastAndroid } from 're
 import Fcm from 'react-native-fcm'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 
 import DetailRow from './detail_row'
 import StackedBar from '../material/charts/stacked_bar'
 import Press from '../material/buttons/press'
 
-import { parseStatus, parseRealmData, parseQueue, generateRatioGraphData } from '../../util/parser'
+import { parseStatus, parseRealmData, parseQueue, generateRatioGraphData, getOrganizationName, getOrganizationId } from '../../util/parser'
 
 const ENV = __DEV__ ? 'dev' : 'production'
 
@@ -132,6 +133,11 @@ class DetailContent extends Component {
           text={this.props.status ? 'Online' : 'Offline'}
           label='Status'
         />
+        <DetailRow
+          icon='account-balance'
+          text={this.props.organization || 'Unavailable'}
+          label='Organization'
+        />
         { !this.props.isService ? this.renderRealmData() : null }
       </View>
     )
@@ -169,12 +175,16 @@ function mapStateToProps({ stats }, { id }) {
   const servers = stats.data.servers || {}
   const autoqueue = stats.data.autoqueue || {}
   const realmdata = stats.data.realmdata || {}
-  const service = servers[id] || {}
+  const server = _.get(stats, ['data', 'servers', id])
+  const organizationId = getOrganizationId(id, server)
+  const organization = getOrganizationName(organizationId, _.get(stats, ['data', 'organizations', organizationId]))
+  console.log(organizationId, stats)
 
   return {
-    ...parseStatus({ ...service, id }, autoqueue),
+    ...parseStatus({ ...server, id }, autoqueue),
     ...parseRealmData(id, realmdata),
-    queue: parseQueue(id, autoqueue)
+    queue: parseQueue(id, autoqueue),
+    organization
   }
 }
 

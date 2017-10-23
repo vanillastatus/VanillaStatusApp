@@ -71,7 +71,7 @@ class Error extends Component {
       >
         <Icon name='cloud-off' size={128} color={ACCENT_COLOR} />
         <View style={{ padding: 24 }}>
-          <Text style={{ color: 'hsla(0, 0%, 100%, 0.9)', fontSize: 32, fontWeight: '600', marginBottom: 24 }}>Elysium Status' servers must be down</Text>
+          <Text style={{ color: 'hsla(0, 0%, 100%, 0.9)', fontSize: 32, fontWeight: '600', marginBottom: 24 }}>Vanilla Status' servers must be down</Text>
           <Text style={{ color: 'hsla(0, 0%, 100%, 0.9)', fontSize: 32, fontWeight: '600' }}>I'm sorry :(</Text>
         </View>
       </View>
