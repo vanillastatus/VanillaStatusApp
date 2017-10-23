@@ -25,6 +25,8 @@ class Grid extends Component {
   constructor(props) {
     super(props)
     const { height, width } = Dimensions.get('window')
+    this.renderGroup = this.renderGroup.bind(this)
+
     this.state = {
       height,
       width
@@ -118,7 +120,7 @@ class Grid extends Component {
 
   render() {
     var groups = this.groupItems(this.props.items, this.props.itemsPerRow);
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
 
     return (
       <View
@@ -129,7 +131,7 @@ class Grid extends Component {
           {...this.props}
           contentContainerStyle={{ top: Platform.select({ android: 0, ios: 76 }) }}
           style={{ marginLeft: MARGIN_SIZE, marginRight: MARGIN_SIZE }}
-          renderRow={this.renderGroup.bind(this)}
+          renderRow={this.renderGroup}
           dataSource={ds.cloneWithRows(groups)}
         />
       </View>

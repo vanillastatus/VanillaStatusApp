@@ -30,8 +30,9 @@ class NavBar extends Component {
     }
 
     let subtitle = 'Refreshing...'
-    if (_.get(servers, 'logon.lastUpdated')) {
-      subtitle = `Last updated ${moment(servers.logon.lastUpdated).fromNow()}`
+    // Get a better value for this
+    if (_.get(servers, 'lightshope_logon.lastUpdated')) {
+      subtitle = `Last updated ${moment(servers.lightshope_logon.lastUpdated).fromNow()}`
     }
 
     if (this.props.error) {

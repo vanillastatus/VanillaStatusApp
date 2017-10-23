@@ -22,7 +22,7 @@ import Error from './material/error'
 
 import { THEME } from '../config'
 
-const TITLE = 'Elysium Status'
+const TITLE = 'Vanilla Status'
 const { PRIMARY_COLOR, BACKGROUND_COLOR,  ACCENT_COLOR } = THEME
 
 class App extends Component {
@@ -44,7 +44,7 @@ class App extends Component {
       return parseStatus(serverWithId, autoqueue)
     })
 
-    return <Grid items={_.sortBy(items, 'order' )} />
+    return <Grid items={_.sortBy(items, 'order')} />
   }
 
   render() {

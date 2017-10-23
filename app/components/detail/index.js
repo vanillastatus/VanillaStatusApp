@@ -10,6 +10,7 @@ import {
   Platform
 } from 'react-native'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 
 import { getTitle, getImage } from '../../util/parser'
 
@@ -76,9 +77,11 @@ const styles = StyleSheet.create({
 })
 
 function mapStateToProps(state, { id }) {
+  const server = _.get(state, ['stats', 'data', 'servers', id])
+
   return {
-    title: getTitle(id),
-    image: getImage(id)
+    title: getTitle(id, server),
+    image: getImage(id, server)
   }
 }
 
