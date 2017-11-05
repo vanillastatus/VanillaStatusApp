@@ -35,15 +35,18 @@ class DetailContent extends Component {
     this.state = {}
   }
 
-  getTopic(id) {
+  getTopic(id, organizationId) {
+    console.log(id, organizationId)
     return Platform.select({
-      ios: `/topics/ios.${ENV}.elysium.${id}`,
-      android: `android.${ENV}.elysium.${id}`
+      ios: `/topics/ios.${ENV}.${organizationId}.${id}`,
+      android: `android.${ENV}.${organizationId}.${id}`
     })
   }
 
-  setSubscriptionState({ id }) {
-    AsyncStorage.getItem(this.getTopic(id))
+  setSubscriptionState({ id, organizationId }) {
+    console.log(id, organizationId)
+
+    AsyncStorage.getItem(this.getTopic(id, organizationId))
       .then((response) => {
         const value = response === 'true'
         this.setState({ subscribed: value })
@@ -76,7 +79,7 @@ class DetailContent extends Component {
   }
 
   onPress() {
-    const topic = this.getTopic(this.props.id)
+    const topic = this.getTopic(this.props.id, this.props.organizationId)
     if (!this.state.subscribed) {
       Fcm.requestPermissions() // for iOS
       Fcm.subscribeToTopic(topic)
@@ -213,6 +216,7 @@ function mapStateToProps({ stats }, { id }) {
     ...parseStatus({ ...server, id }, autoqueue),
     ...parseRealmData(id, realmdata),
     queue: parseQueue(id, autoqueue),
+    organizationId,
     organization
   }
 }
