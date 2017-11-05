@@ -19,7 +19,7 @@ class NavBar extends Component {
   }
 
   render () {
-    const { servers, autoqueue } = this.props.data
+    const { servers, autoqueue, lastUpdated } = this.props.data
 
     if (this.props.overrideNavbar) {
       return (
@@ -30,9 +30,8 @@ class NavBar extends Component {
     }
 
     let subtitle = 'Refreshing...'
-    // Get a better value for this
-    if (_.get(servers, 'lightshope_logon.lastUpdated')) {
-      subtitle = `Last updated ${moment(servers.lightshope_logon.lastUpdated).fromNow()}`
+    if (lastUpdated) {
+      subtitle = `Last updated ${moment(lastUpdated).fromNow()}`
     }
 
     if (this.props.error) {
