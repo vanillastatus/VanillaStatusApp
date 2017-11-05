@@ -90,6 +90,35 @@ class DetailContent extends Component {
     }
   }
 
+  renderUnavailableOverlay() {
+    const { percentage_alliance, percentage_horde, population, uptime } = this.props
+
+    if (!percentage_alliance && !percentage_horde && !population && !uptime) {
+      return (
+        <View style={{
+          height: 72 * 3,
+          backgroundColor: 'rgba(0, 0, 0, 0.91)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <Text style={{
+              alignItems: 'center',
+              fontSize: 16,
+              fontStyle: 'italic',
+              color: '#ffffff'
+            }}
+          >
+            Realm Data Unavailable
+          </Text>
+        </View>
+      )
+    }
+  }
+
   renderRealmData() {
     const { percentage_alliance, percentage_horde } = this.props
 
@@ -114,6 +143,7 @@ class DetailContent extends Component {
           label='Uptime'
         />
         <FactionRatio alliance={percentage_alliance} horde={percentage_horde} />
+        {this.renderUnavailableOverlay()}
       </View>
     )
   }
@@ -178,7 +208,6 @@ function mapStateToProps({ stats }, { id }) {
   const server = _.get(stats, ['data', 'servers', id])
   const organizationId = getOrganizationId(id, server)
   const organization = getOrganizationName(organizationId, _.get(stats, ['data', 'organizations', organizationId]))
-  console.log(organizationId, stats)
 
   return {
     ...parseStatus({ ...server, id }, autoqueue),
