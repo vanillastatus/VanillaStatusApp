@@ -19,6 +19,22 @@ const { PRIMARY_COLOR, BACKGROUND_COLOR, ACCENT_COLOR, SUCCESS_COLOR, ERROR_COLO
 const MARGIN_SIZE = 4
 
 import Box from './material/box'
+import Header from './header'
+
+// helpers
+const fillRow = (startIndex, items, itemsPerRow, skip) => {
+  const row = []
+  for (i = startIndex; i < items.length; i++) {
+    if (items[i].dontGroup || row.length === itemsPerRow) {
+      break
+    }
+
+    row.push(items[i])
+    skip[items[i].id] = true
+  }
+
+  return row
+}
 
 class Grid extends Component {
 
@@ -39,42 +55,71 @@ class Grid extends Component {
   }
 
   groupItems(items, itemsPerRow) {
+    const headers = {
+      // lightshope: 0
+      // elysium: 3
+    }
     const groups = []
-    let group = { items: [] }
+    // Enables ability to skip already grouped items
+    const skip = {  /* item.id: 'id' */ }
+
     items.forEach(function(item, index) {
-      if (group.items.length === itemsPerRow) {
-        groups.push(group)
-        if (item.dontGroup) {
-          groups.push({ items: [ item ] })
-          group = { items: [] }
-        } else {
-          group = { items: [ item ] }
-        }
+      if (skip[item.id]) {
+        return
+      }
+
+      if (item.organizationId && typeof headers[item.organizationId] === 'undefined') {
+        headers[item.organizationId] = groups.length
+        groups.push({ organizationId: item.organizationId, header: true })
+      }
+
+      if (item.dontGroup) {
+        groups.push({ items: [ item ]})
       } else {
-        if (item.dontGroup) {
-          groups.push({ items: [ item ] })
-        } else {
-          group.items.push(item)
-        }
+        groups.push({ items: fillRow(index, items, itemsPerRow, skip)})
       }
     })
-
-    if (group.items.length > 0) {
-      group.isLast = true
-      groups.push(group)
-    }
 
     return groups
   }
 
+  getHeaderSize() {
+    let { height, width } = this.state
+    let modifier = 1
+    if (height < width) {
+      // support maxWidth center container
+      // modifier = 1.5
+    }
+
+    // Account for margins
+    width -= (1 * MARGIN_SIZE)
+
+    const currentWidth =  width/modifier
+    const currentHeight = 64/modifier
+
+    const margin = (width - currentWidth) / 2
+
+    return {
+      height: currentHeight,
+      width: currentWidth,
+      marginLeft: margin,
+      marginRight: margin
+    }
+  }
+
   getItemSize(group) {
     let { height, width } = this.state
+    let modifier = 1
+    if (height < width) {
+      // support maxWidth center container
+      // modifier = 1.5
+    }
 
     // Account for margins
     width -= (group.items.length * MARGIN_SIZE)
 
-    const currentWidth =  width/group.items.length
-    const currentHeight = width/this.props.itemsPerRow
+    const currentWidth =  (width/group.items.length)/modifier
+    const currentHeight = (width/this.props.itemsPerRow)/modifier
 
 
     return {
@@ -84,6 +129,16 @@ class Grid extends Component {
   }
 
   renderGroup(group) {
+    if (group.header) {
+      const { height, width, marginLeft, marginRight } = this.getHeaderSize()
+      console.log(height, width)
+      return (
+        <View style={{ marginLeft, marginRight, width }}>
+          <Header organizationId={group.organizationId} />
+        </View>
+      )
+    }
+
     const { height, width } = this.getItemSize(group)
 
     const items = group.items.map((item, index) => {
@@ -100,7 +155,7 @@ class Grid extends Component {
       return (
         <Box
           key={item.id}
-          style={{ marginLeft, marginBottom, width, height }}
+          style={{ marginLeft, marginBottom, width, height, borderRadius: 2 }}
           title={item.title}
           subtitle={item.subtitle}
           onPress={() => { RouterActions.detail({ id: item.id }) }}
@@ -122,10 +177,12 @@ class Grid extends Component {
     var groups = this.groupItems(this.props.items, this.props.itemsPerRow);
     var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
 
+    const { width } = this.getHeaderSize()
+
     return (
       <View
         onLayout={this.onLayout.bind(this)}
-        style={{ flex: 1, backgroundColor: BACKGROUND_COLOR }}
+        style={{ flex: 1, backgroundColor: 'transparent' }}
       >
         <ListView
           {...this.props}

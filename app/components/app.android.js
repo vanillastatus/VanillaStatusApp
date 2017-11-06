@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   ToolbarAndroid,
   Button,
   StatusBar,
@@ -55,7 +56,7 @@ class App extends Component {
     }
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: BACKGROUND_COLOR }}>
         { this.props.hasFetched ? this.renderStats(servers, autoqueue) : this.renderActivityIndicator() }
       </View>
     );
