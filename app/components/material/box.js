@@ -51,7 +51,7 @@ class Box extends Component {
             style={{ height, width }}
             source={{ uri: this.props.imageURL }}
           />
-        <View style={[ styles.boxFooter, { width, height: footerHeight }]}>
+          <View style={[ styles.boxFooter, { width, height: footerHeight }]}>
             <View style={styles.textWrapper}>
               <Text
                 ellipsizeMode='tail'

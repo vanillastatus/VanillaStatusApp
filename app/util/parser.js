@@ -34,7 +34,7 @@ export function parseRealmData(id, { servers = {}, available } = {}) {
 }
 
 export function getOrganizationName(id, organization = {}) {
-  return organization.name
+  return organization.name || 'Unknown Organization'
 }
 
 export function getTitle(id, server = {}) {
@@ -68,6 +68,7 @@ export function parseStatus(server, autoqueue, realmdata) {
   const image = getImage(id, server)
   const order = getOrder(id, server)
   const dontGroup = getDontGroup(id, server)
+  const organizationId = getOrganizationId(id, server)
 
   let subtitle
   if (!isService) {
@@ -80,6 +81,7 @@ export function parseStatus(server, autoqueue, realmdata) {
     status,
     image,
     id,
+    organizationId,
     isService,
     order,
     dontGroup

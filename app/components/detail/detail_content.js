@@ -36,7 +36,6 @@ class DetailContent extends Component {
   }
 
   getTopic(id, organizationId) {
-    console.log(id, organizationId)
     return Platform.select({
       ios: `/topics/ios.${ENV}.${organizationId}.${id}`,
       android: `android.${ENV}.${organizationId}.${id}`
