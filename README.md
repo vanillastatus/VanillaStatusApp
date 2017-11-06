@@ -2,22 +2,22 @@
 
 >Mobile App for Android and iOS designed to monitor private WoW servers. It makes the process of checking wow server statuses easier while on the go.
 
-* **Current Status**: Beta
+* **Current Status**: Beta (1.0.1-rc1)
 
 #### Status
-<img src='./images/android.png' height='400' /> <img src='./images/ios.png' height='400' />
+<img src='./images/android_1.0.1-rc1.png' height='400' />
 
 #### Realm Stats
-<img src='./images/android_realm_stats.png' height='400' /> <img src='./images/ios_realm_stats.png' height='400' />
+<img src='./images/android_realm_stats_1.0.1-rc1.png' height='400' />
 #### Realm Alert Push Notifications
-<img src='./images/android_push.png' height='400' />
+<img src='./images/android_push_1.0.1-rc1.png' height='400' />
 
 #### Download
 
-###### Android (Alpha)
+##### Android (Alpha)
 https://play.google.com/store/apps/details?id=com.elysiumstatus
 
-###### iOS (Waiting on Developer Account)
+##### iOS (Need a iOS device or iOS tester with a device.)
 Not yet released
 
 **Supported Supported**
